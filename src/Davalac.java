@@ -143,4 +143,17 @@ public class Davalac extends Osoba{
                 pw.close();
         }
     }
+
+    private static int getNextId()
+    {
+        int id = 0;
+        ArrayList<Davalac> davalacs = UcitajJSON("davaoci.json");
+        for (Davalac d : davalacs)
+            if(d.id_davaoca > id)
+                id = d.id_davaoca;
+
+        id++;
+
+        return id;
+    }
 }

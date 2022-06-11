@@ -93,4 +93,17 @@ public class Doktor extends Osoba{
                 pw.close();
         }
     }
+
+    private static int getNextId()
+    {
+        int id = 0;
+        ArrayList<Doktor> doktors = UcitajJSON("doktori.json");
+        for (Doktor d : doktors)
+            if(d.id_doktora > id)
+                id = d.id_doktora;
+
+        id++;
+
+        return id;
+    }
 }

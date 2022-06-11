@@ -111,4 +111,17 @@ public class Tehnicar extends Osoba{
         }
     }
 
+    private static int getNextId()
+    {
+        int id = 0;
+        ArrayList<Tehnicar> tehnicars = UcitajJSON("tehnicari.json");
+        for (Tehnicar t : tehnicars)
+            if(t.id_tehnicar > id)
+                id = t.id_tehnicar;
+
+        id++;
+
+        return id;
+    }
+
 }
