@@ -32,7 +32,6 @@ public class Tehnicar extends Osoba{
 
     public Tehnicar()
     {
-
     }
 
     public static ArrayList<Tehnicar> UcitajJSON(String path_name)
@@ -53,7 +52,11 @@ public class Tehnicar extends Osoba{
                 String telefon = jsonObject.get("telefon").toString();
                 String imeRoditelja = jsonObject.get("ime_roditelja").toString();
                 String pol = jsonObject.get("pol").toString();
-                int id =;
+                int id = Integer.parseInt(jsonObject.get("id_tehnicar").toString());
+                String strucna_sprema = jsonObject.get("strucna_sprema").toString();
+
+                Tehnicar tehnicar = new Tehnicar(ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol,id,strucna_sprema);
+                tehnicars.add(tehnicar);
             }
         }
         catch (Exception e)
