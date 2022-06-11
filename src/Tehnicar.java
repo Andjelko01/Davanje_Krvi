@@ -1,7 +1,9 @@
 import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Tehnicar extends Osoba{
@@ -24,7 +26,8 @@ public class Tehnicar extends Osoba{
         this.strucnaSprema = strucnaSprema;
     }
 
-    public Tehnicar(String ime, String prezime, String jmbg, String adresa, String telefon, String imeRoditelja, String pol, int id_tehnicar, String strucnaSprema) {
+    public Tehnicar(String ime, String prezime, String jmbg, String adresa, String telefon, String imeRoditelja, String pol, int id_tehnicar, String strucnaSprema)
+    {
         super(ime, prezime, jmbg, adresa, telefon, imeRoditelja, pol);
         this.id_tehnicar = id_tehnicar;
         this.strucnaSprema = strucnaSprema;
@@ -58,12 +61,54 @@ public class Tehnicar extends Osoba{
                 Tehnicar tehnicar = new Tehnicar(ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol,id,strucna_sprema);
                 tehnicars.add(tehnicar);
             }
+
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.err.println("Greska pri ucitavanju Tehnicara.");
         }
 
         return tehnicars;
     }
+
+    public static void UpisiUJSON(ArrayList<Tehnicar> tehnicari, String path_name)
+    {
+        PrintWriter pw = null;
+        try
+        {
+            JSONArray jsonArray = new JSONArray();
+            pw = new PrintWriter(path_name);
+
+            for (Tehnicar t:tehnicari
+            )
+            {
+                JSONObject jsonObject = new JSONObject();
+
+                jsonObject.put("id_tehnicar",t.id_tehnicar);
+                jsonObject.put("ime",t.ime);
+                jsonObject.put("prezime",t.prezime);
+                jsonObject.put("jmbg",t.jmbg);
+                jsonObject.put("adresa",t.adresa);
+                jsonObject.put("telefon",t.telefon);
+                jsonObject.put("ime_roditelja",t.imeRoditelja);
+                jsonObject.put("pol",t.pol);
+                jsonObject.put("strucna_sprema",t.strucnaSprema);
+
+                jsonArray.add(jsonObject);
+            }
+
+            pw.write(jsonArray.toJSONString());
+
+        }
+        catch (Exception e)
+        {
+            System.err.println("Greska pri ucitavanju Tehnicara.");
+        }
+        finally
+        {
+            if(pw!=null)
+                pw.close();
+        }
+    }
+
 }
