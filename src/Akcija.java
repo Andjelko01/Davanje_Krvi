@@ -137,95 +137,142 @@ public class Akcija
     {
         Scanner scanner = new Scanner(System.in);
         LocalDate date = null;
-
-        System.out.print("Unesite datum akcije(DD/MM/GGGG): ");
-        try {
-            String unos = scanner.nextLine();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-            date = LocalDate.parse(unos, formatter);
-
-            if(date.isBefore(LocalDate.now())) {
-                throw new DateTimeException("Neispravan datum");
-            }
-
-        } catch (Exception e) {
-            System.err.println("Uneti datum nije validan");
-        }
-
-        System.out.print("Unesite vreme pocetka akcije: ");
-        int pocetak = scanner.nextInt();
-        if(pocetak > 23 || pocetak < 0)
-        {
-            System.err.println("Vreme pocetka nije validno");
-            return;
-        }
-        System.out.print("Unesite vreme kraja akcije: ");
-        int kraj = scanner.nextInt();
-        if(kraj > 23 || kraj < 0 || kraj < pocetak)
-        {
-            System.err.println("Vreme kraja akcije nije validno");
-            return;
-        }
-        System.out.print("Unesite mesto odrzavanja akcije: ");
-        String mesto = scanner.nextLine();
-
-        System.out.println("Izaberite doktora za akciju");
-        ArrayList<Doktor> doktori = Doktor.UcitajJSON("doktori.json");
-        for (Doktor d:doktori)
-        {
-            System.out.println(d.getId_doktora() + "." + " " + d.ime + " " + d.prezime);
-        }
-        int id_doce = scanner.nextInt();
-        Doktor doca = null;
-        for (Doktor d:doktori)
-        {
-            if(id_doce == d.getId_doktora())
-            {
-                doca = d;
-                break;
-            }
-        }
-        if(doca == null)
-        {
-            System.err.println("Ne postoji doktor sa unetim ID");
-            return;
-        }
-
-        int brTehnicara = scanner.nextInt();
-        if(brTehnicara < 2 || brTehnicara > 5)
-        {
-            System.err.println("Broj tehnicara mora biti od 2 do 5");
-            return;
-        }
-        ArrayList<Tehnicar> izabraniTehnicari = new ArrayList<>();
-        ArrayList<Tehnicar> tehnicari = Tehnicar.UcitajJSON("tehnicari.json");
-        for (int i = 0; i < brTehnicara; i++)
-        {
-            System.out.println("Izaberite tehnicara za akciju");
-            for (Tehnicar t:tehnicari)
-            {
-                System.out.println(t.getId_tehnicar() + "." + " " + t.ime + " " + t.prezime);
-            }
-            int id_teh = scanner.nextInt();
-            Tehnicar teh = null;
-            for (Tehnicar t:tehnicari)
-            {
-                if(id_teh == t.getId_tehnicar())
+        String input = "";
+        do {
+            System.out.print("Unesite datum akcije(DD.MM.GGGG): ");
+            boolean flag3=false;
+            do {
+                try
                 {
-                    teh = t;
+                    flag3=false;
+                    String unos = scanner.nextLine();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                    date = LocalDate.parse(unos, formatter);
+
+                    if(date.isBefore(LocalDate.now())) {
+                        flag3=true;
+                        throw new DateTimeException("Neispravan datum");
+                    }
+
+                } catch (Exception e) {
+                    flag3=true;
+                    System.err.println("Uneti datum nije validan");
+                }
+            }while(flag3);
+
+
+            System.out.print("Unesite vreme pocetka akcije: ");
+            int pocetak = scanner.nextInt();
+            if(pocetak > 23 || pocetak < 0)
+            {
+                System.err.println("Vreme pocetka nije validno");
+                return;
+            }
+
+            System.out.print("Unesite vreme kraja akcije: ");
+            int kraj = scanner.nextInt();
+            if(kraj > 23 || kraj < 0 || kraj < pocetak)
+            {
+                System.err.println("Vreme kraja akcije nije validno");
+                return;
+            }
+            String mesto;
+            boolean flag = false;
+
+            do
+            {
+                System.out.print("Unesite mesto odrzavanja akcije: ");
+                mesto = scanner.nextLine();
+                if (mesto.isEmpty())
+                {
+                    flag=true;
+                    System.out.println("Niste uneli nista, ako zelite da prekinete kreiranje akcije unesite 0 ili unesite mesto akcije");
+                }
+                else{
+                    flag=false;
+                }
+                if (mesto=="0")
+                {
+                    return;
+                }
+            }while(flag);
+
+
+
+            System.out.println("Izaberite doktora za akciju");
+            ArrayList<Doktor> doktori = Doktor.UcitajJSON("doktori.json");
+            for (Doktor d:doktori)
+            {
+                System.out.println(d.getId_doktora() + "." + " " + d.ime + " " + d.prezime);
+            }
+            int id_doce = scanner.nextInt();
+            Doktor doca = null;
+            for (Doktor d:doktori)
+            {
+                if(id_doce == d.getId_doktora())
+                {
+                    doca = d;
                     break;
                 }
             }
-            if(teh == null)
+            if(doca == null)
             {
-                System.err.println("Ne postoji tehnicar sa unetim ID");
+                System.err.println("Ne postoji doktor sa unetim ID");
                 return;
             }
-            else
-                izabraniTehnicari.add(teh);
 
-            Akcija a = new Akcija(Akcija.getNextId(),date,pocetak,kraj,mesto,doca,izabraniTehnicari);
-        }
+            //DODAVANJE TEHNICARA
+            System.out.println("Unesite broj tehnicara na akciji(2-5): ");
+            int brTehnicara = scanner.nextInt();
+            if(brTehnicara < 2 || brTehnicara > 5)
+            {
+                System.err.println("Broj tehnicara mora biti od 2 do 5");
+                return;
+            }
+            ArrayList<Tehnicar> izabraniTehnicari = new ArrayList<>();
+            ArrayList<Tehnicar> tehnicari = Tehnicar.UcitajJSON("tehnicari.json");
+            for (int i = 0; i < brTehnicara; i++)
+            {
+                System.out.println("Izaberite tehnicara za akciju");
+                for (Tehnicar t:tehnicari)
+                {
+                    System.out.println(t.getId_tehnicar() + "." + " " + t.ime + " " + t.prezime);
+                }
+
+                int id_teh = scanner.nextInt();
+
+                Tehnicar teh = null;
+                boolean flag2=false;
+                for (Tehnicar t:izabraniTehnicari)
+                {
+                    if(id_teh == t.getId_tehnicar())
+                    {
+                        System.err.println("Ne mozete izabrati istog tehnicara dva puta");
+                        flag2=true;
+                        break;
+                    }
+                }
+                for (Tehnicar t:tehnicari)
+                {
+                    if(id_teh == t.getId_tehnicar()&&flag!=true)
+                    {
+                        teh = t;
+                        break;
+                    }
+                }
+                if(teh == null)
+                {
+                    System.err.println("Ne postoji tehnicar sa unetim ID");
+                    return;
+                }
+                else
+                    izabraniTehnicari.add(teh);
+                //KRAJ DODAVANJE TEHNICARA
+
+                Akcija a = new Akcija(Akcija.getNextId(),date,pocetak,kraj,mesto,doca,izabraniTehnicari);
+            }
+        }while(input!="0");
+
 
 
     }

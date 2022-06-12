@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="v0.5">
+    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="V0.7">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2022__10_59_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2022__10_59__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doktori.json" beforeDir="false" afterPath="$PROJECT_DIR$/doktori.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Davalac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Davalac.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Osoba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tehnicar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehnicar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tehnicari.json" beforeDir="false" afterPath="$PROJECT_DIR$/tehnicari.json" afterDir="false" />
     </list>
-    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic" />
+    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic">
+      <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Osoba.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +36,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Main.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="11" end1="16" start2="12" end2="17" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="17" end1="24" start2="18" end2="25" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="25" end1="42" start2="26" end2="53" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Osoba.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="5" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="21" end1="21" start2="26" end2="27" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="23" end1="23" start2="29" end2="124" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Doktor.java">
+      <ranges>
+        <range start1="32" end1="34" start2="32" end2="33" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="36" end1="36" start2="35" end2="36" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="46" end1="46" start2="46" end2="47" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="52" end1="53" start2="53" end2="54" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="71" end1="72" start2="72" end2="73" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="104" end1="105" start2="105" end2="105" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="123" end1="124" start2="123" end2="124" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="126" end1="127" start2="126" end2="127" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="137" end1="137" start2="137" end2="163" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -37,15 +77,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/Andjelko/IdeaProjects/Davanje Krvi/json-simple-1.1.1.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "codetogether.settings"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -70,8 +114,6 @@
       <updated>1654886848595</updated>
       <workItem from="1654886856349" duration="7325000" />
       <workItem from="1654925984538" duration="315000" />
-      <workItem from="1654932365365" duration="16643000" />
-      <workItem from="1655021884299" duration="1984000" />
     </task>
     <task id="LOCAL-00001" summary="V0.1">
       <created>1654893899010</created>
@@ -94,35 +136,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654926111418</updated>
     </task>
-    <task id="LOCAL-00004" summary="V0.2">
-      <created>1654944836717</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654944836717</updated>
-    </task>
-    <task id="LOCAL-00005" summary="v0.3">
-      <created>1654957898619</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654957898619</updated>
-    </task>
-    <task id="LOCAL-00006" summary="v0.4">
-      <created>1654958116192</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1654958116192</updated>
-    </task>
-    <task id="LOCAL-00007" summary="v0.5">
-      <created>1654980810497</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1654980810497</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,14 +154,17 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="V0.1" />
     <MESSAGE value="Changes by milanceandrejic" />
-    <MESSAGE value="V0.2" />
-    <MESSAGE value="v0.3" />
-    <MESSAGE value="v0.4" />
-    <MESSAGE value="v0.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.5" />
+    <MESSAGE value="V0.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="V0.7" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

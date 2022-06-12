@@ -138,7 +138,7 @@ public class Tehnicar extends Osoba{
             switch (input)
             {
                 case 1:
-                    //Doktor.DodajDoktora();
+                    Tehnicar.DodajTehnicara();
                     break;
                 case 2:
 
@@ -152,4 +152,35 @@ public class Tehnicar extends Osoba{
         }
         while (input != 0);
     }
+
+
+
+
+    public static void DodajTehnicara()
+    {
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Dodavanje tehnicara je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
+        int id_tehnicar;
+        String strucnaSprema;
+        String[] podaci=DodajOsobu();
+        if (podaci==null)
+        {
+            return;
+        }
+        do {
+            System.out.println("Unesite strucnu spremu tehnicara");
+            strucnaSprema=scanner.nextLine();
+            scanner.reset();
+            if (PrekidUnosa(strucnaSprema)){
+                return;
+            }
+        }while(ProveraStringa(strucnaSprema));
+        Tehnicar t=new Tehnicar(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),strucnaSprema);
+
+        ArrayList<Tehnicar> ucitan = Tehnicar.UcitajJSON("tehnicari.json");
+        ucitan.add(t);
+        Tehnicar.UpisiUJSON(ucitan,"tehnicari.json");
+    }
+
+
 }

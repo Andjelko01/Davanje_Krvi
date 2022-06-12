@@ -1,3 +1,8 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public abstract class Osoba
 {
     protected String ime;
@@ -19,6 +24,7 @@ public abstract class Osoba
         this.telefon = telefon;
         this.imeRoditelja = imeRoditelja;
         this.pol = pol;
+
     }
 
     public static LocalDate getDatumRodjenja(String jmbg)

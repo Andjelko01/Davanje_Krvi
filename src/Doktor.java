@@ -51,7 +51,7 @@ public class Doktor extends Osoba{
         }
         catch (Exception e)
         {
-            System.err.println("Greska pri ucitavanju Doktora.");
+           System.err.println("Greska pri ucitavanju Doktora.");
         }
 
         return doktors;
@@ -70,7 +70,7 @@ public class Doktor extends Osoba{
             {
                 JSONObject jsonObject = new JSONObject();
 
-                jsonObject.put("id_davalac",d.id_doktora);
+                jsonObject.put("id_doktor",d.id_doktora);
                 jsonObject.put("ime",d.ime);
                 jsonObject.put("prezime",d.prezime);
                 jsonObject.put("jmbg",d.jmbg);
@@ -103,7 +103,6 @@ public class Doktor extends Osoba{
         for (Doktor d : doktors)
             if(d.id_doktora > id)
                 id = d.id_doktora;
-
         id++;
 
         return id;
@@ -122,10 +121,10 @@ public class Doktor extends Osoba{
             switch (input)
             {
                 case 1:
-                    //Doktor.DodajDoktora();
+                    Doktor.DodajDoktora();
                     break;
                 case 2:
-
+                    System.out.println(Doktor.UcitajJSON("doktori.json"));
                     break;
                 case 3:
 
@@ -135,5 +134,31 @@ public class Doktor extends Osoba{
             }
         }
         while (input != 0);
+    }
+
+    public static void DodajDoktora()
+    {
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Dodavanje doktora je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
+        int id_doktora;
+        String[] podaci=DodajOsobu();
+        if (podaci==null)
+        {
+            return;
+        }
+        Doktor t=new Doktor(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId());
+    }
+
+    @Override
+    public String toString() {
+        return "Doktor{" +
+                "ime='" + ime + '\'' +
+                ", prezime='" + prezime + '\'' +
+                ", jmbg='" + jmbg + '\'' +
+                ", adresa='" + adresa + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", imeRoditelja='" + imeRoditelja + '\'' +
+                ", pol='" + pol + '\'' + this.getDatumRodjenja(this.jmbg) +
+                '}';
     }
 }
