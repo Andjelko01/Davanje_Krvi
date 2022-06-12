@@ -89,7 +89,8 @@ public class Davalac extends Osoba{
                 int id = Integer.parseInt(jsonObject.get("id_davalac").toString());
                 String krvna_grupa = jsonObject.get("krvna_grupa").toString();
                 int broj_davanja = Integer.parseInt(jsonObject.get("broj_davanja").toString());
-                LocalDate poslednje_davanje = (LocalDate) jsonObject.get("poslednje_davanje");
+                String datumPosDav = jsonObject.get("poslednje_davanje").toString();
+                LocalDate poslednje_davanje = LocalDate.parse(datumPosDav);
                 boolean aktivnost = (boolean) jsonObject.get("aktivan");
 
                 Davalac davalac = new Davalac(ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol,id,krvna_grupa,broj_davanja,poslednje_davanje,aktivnost);
@@ -99,7 +100,8 @@ public class Davalac extends Osoba{
         }
         catch (Exception e)
         {
-            System.err.println("Greska pri ucitavanju Davalaca.");
+            System.out.println(e.getMessage());
+//            System.err.println("Greska pri ucitavanju Davalaca.");
         }
 
         return davalacs;
@@ -128,7 +130,7 @@ public class Davalac extends Osoba{
                 jsonObject.put("pol",d.pol);
                 jsonObject.put("krvna_grupa",d.krvnaGrupa);
                 jsonObject.put("broj_davanja",d.brojDavanja);
-                jsonObject.put("poslednje_davanje",d.poslednjeDavanje);
+                jsonObject.put("poslednje_davanje",d.poslednjeDavanje.toString());
                 jsonObject.put("aktivan",d.aktivan);
 
                 jsonArray.add(jsonObject);
@@ -160,7 +162,50 @@ public class Davalac extends Osoba{
 
         return id;
     }
-    public static void DodajDavaoca()
+
+    public static void MenuDavaoc()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String meni = "1. Dodaj davaoca \t2. Izmeni davaoca \t0. Nazad";
+        int input;
+        do
+        {
+            System.out.println(meni);
+            input = scanner.nextInt();
+
+            switch (input)
+            {
+                case 1:
+                    DodajDavaoca();
+                    break;
+                case 2:
+                    ArrayList<Davalac> davaoci=UcitajJSON("davaoci.json");
+                    for (Davalac d:davaoci)
+                    {
+                        System.out.println(d.id_davaoca + ". " + d.ime + " " + d.prezime + " - " + d.jmbg);
+                    }
+                    System.out.println("Unesite redni broj davaoca koji zelite da izmenite:");
+                    int rb=scanner.nextInt();
+
+                    for (Davalac d:davaoci)
+                    {
+                        if (d.id_davaoca==rb)
+                        {
+                            d.IzmeniDavaoca();
+                        }
+                    }
+                    break;
+                case 3:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+        while (input != 0);
+    }
+
+    public static Davalac DodajDavaoca()
     {
         String krvnaGrupa,brojDavanja,datumDavanja;
         LocalDate poslednjeDavanje;

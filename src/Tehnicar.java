@@ -66,7 +66,8 @@ public class Tehnicar extends Osoba{
         }
         catch (Exception e)
         {
-            System.err.println("Greska pri ucitavanju Tehnicara.");
+            System.out.println(e.getMessage());
+            //System.err.println("Greska pri ucitavanju Tehnicara.");
         }
 
         return tehnicars;
@@ -141,12 +142,20 @@ public class Tehnicar extends Osoba{
                     Tehnicar.DodajTehnicara();
                     break;
                 case 2:
-
-                    break;
-                case 3:
-                    ArrayList<Tehnicar> tehnicari=UcitajJSON("tehnicar.json");
+                    ArrayList<Tehnicar> tehnicari=UcitajJSON("tehnicari.json");
+                    for (Tehnicar t:tehnicari)
+                    {
+                        System.out.println(t.id_tehnicar + ". " + t.ime + " " + t.prezime + " - " + t.jmbg);
+                    }
                     System.out.println("Unesite redni broj tehnicara koji zelite da izmenite:");
-                    tehnicari.get(Integer.parseInt(scanner.nextLine())).IzmeniTehnicara();
+                    int rb=scanner.nextInt();
+                    for (Tehnicar t:tehnicari)
+                    {
+                        if (t.id_tehnicar==rb)
+                        {
+                            t.IzmeniTehnicara();
+                        }
+                    }
                     break;
                 default:
                     break;

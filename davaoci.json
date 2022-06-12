@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "ime": "Mirko",
+    "prezime": "Mitric",
+    "broj_davanja": 23,
+    "poslednje_davanje": "2022-06-13",
+    "aktivan": true,
+    "ime_roditelja": "Mitar",
+    "telefon": "06132132113",
+    "adresa": "Petra Petrovica 23, Beograd",
+    "jmbg": "1308001254689",
+    "pol": "Musko",
+    "id_davalac": 1,
+    "krvna_grupa": "A+"
+  }
+]

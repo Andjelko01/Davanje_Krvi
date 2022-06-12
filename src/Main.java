@@ -26,7 +26,7 @@ public class Main
 //        Izvestaj.UpisiUJSON(new ArrayList<>(),"izvestaji.json");
 
         Scanner scanner = new Scanner(System.in);
-        String glavni_meni = "1. Upravljaj Akcijama \t2. Upravljaj doktorima \t3. Upravljaj Tehnicarima \t0. Napusti program";
+        String glavni_meni = "1. Upravljaj akcijama \t2. Upravljaj doktorima \t3. Upravljaj tehnicarima \t4.Upravljaj davaocima \t0. Napusti program";
         int input;
         do
         {
@@ -43,6 +43,9 @@ public class Main
                     break;
                 case 3:
                     Tehnicar.MenuTehnicar();
+                    break;
+                case 4:
+                    Davalac.MenuDavaoc();
                     break;
                 default:
                     break;

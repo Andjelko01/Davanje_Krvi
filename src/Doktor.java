@@ -116,19 +116,34 @@ public class Doktor extends Osoba{
         {
             System.out.println(meni);
             input = scanner.nextInt();
-
             switch (input)
             {
                 case 1:
                     Doktor.DodajDoktora();
                     break;
                 case 2:
-                    System.out.println(Doktor.UcitajJSON("doktori.json"));
-                    break;
-                case 3:
+                    int unos;
                     ArrayList<Doktor> doktori=UcitajJSON("doktori.json");
-                    System.out.println("Unesite redni broj doktora koji zelite da izmenite:");
-                    doktori.get(Integer.parseInt(scanner.nextLine())).IzmeniDoktora();
+                    for (Doktor d:doktori)
+                    {
+                        System.out.println(d);
+                    }
+                    System.out.println("Unesite redni broj doktora koji zelite da izmenite (ako zelite da prekinete unesite 0):");
+                    int rb;
+                    scanner.hasNext();
+                        unos=scanner.nextInt();
+                        if (unos==0)
+                        {
+                            break;
+                        }
+                    for (Doktor d:doktori)
+                    {
+                        if (d.id_doktora==unos)
+                        {
+                            d.IzmeniDoktora();
+                        }
+                    }
+                    UpisiUJSON(doktori,"doktori.json");
                     break;
                 default:
                     break;
@@ -158,15 +173,8 @@ public class Doktor extends Osoba{
     }
 
     @Override
-    public String toString() {
-        return "Doktor{" +
-                "ime='" + ime + '\'' +
-                ", prezime='" + prezime + '\'' +
-                ", jmbg='" + jmbg + '\'' +
-                ", adresa='" + adresa + '\'' +
-                ", telefon='" + telefon + '\'' +
-                ", imeRoditelja='" + imeRoditelja + '\'' +
-                ", pol='" + pol + '\'' + this.getDatumRodjenja(this.jmbg) +
-                '}';
+    public String toString()
+    {
+        return id_doktora+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
     }
 }
