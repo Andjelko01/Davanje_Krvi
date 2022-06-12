@@ -190,7 +190,10 @@ public class Davalac extends Osoba{
         }while(ProveraStringa(brojDavanja));
         int godine= getDatumRodjenja(podaci[2]).getYear()-LocalDate.now().getYear();
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+//        datumDavanja = LocalDate.now().toString();
+//        poslednjeDavanje = LocalDate.parse(datumDavanja, formatter);
+//        System.out.println(poslednjeDavanje.toString());
 
         //Davalac davaoc= new Davalac(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),krvnaGrupa,Integer.parseInt(brojDavanja),formatter.format(LocalDate.now()),(godine>=18 || godine<65)?true:false);
     }
