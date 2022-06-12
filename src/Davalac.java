@@ -170,14 +170,14 @@ public class Davalac extends Osoba{
         String[] podaci=DodajOsobu();
         if (podaci==null)
         {
-            return;
+            return null;
         }
         do {
             System.out.println("Unesite krvnu grupu");
             krvnaGrupa=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(krvnaGrupa)){
-                return;
+                return null;
             }
         }while(ProveraStringa(krvnaGrupa));
         do {
@@ -185,7 +185,7 @@ public class Davalac extends Osoba{
             brojDavanja=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(brojDavanja)){
-                return;
+                return null;
             }
         }while(ProveraStringa(brojDavanja));
         int godine= getDatumRodjenja(podaci[2]).getYear()-LocalDate.now().getYear();
@@ -196,6 +196,11 @@ public class Davalac extends Osoba{
 //        System.out.println(poslednjeDavanje.toString());
 
         Davalac davaoc= new Davalac(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),krvnaGrupa,Integer.parseInt(brojDavanja),LocalDate.now(),(godine>=18 || godine<65)?true:false);
+        ArrayList<Davalac> sviDavaoci = Davalac.UcitajJSON("davaoci.json");
+        sviDavaoci.add(davaoc);
+        Davalac.UpisiUJSON(sviDavaoci,"davaoci.json");
+        System.out.println(davaoc);
+        return davaoc;
     }
 
     public void IzmeniDavaoca()
@@ -204,7 +209,8 @@ public class Davalac extends Osoba{
         System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol 8.krvnaGrupa 9.brojDavanja");
         Scanner scanner= new Scanner(System.in);
         String promena=scanner.nextLine();
-        switch(promena.toLowerCase()){
+        switch(promena.toLowerCase())
+        {
             case "krvnagrupa":
                 System.out.println("Unesite novu krvu grupu");
                 setKrvnaGrupa(scanner.nextLine());

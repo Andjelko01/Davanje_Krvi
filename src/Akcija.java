@@ -48,7 +48,8 @@ public class Akcija
                 int id = Integer.parseInt(jsonObject.get("id_akcija").toString());
                 int vreme_pocetka = Integer.parseInt(jsonObject.get("vreme_pocetka").toString());
                 int vreme_kraja = Integer.parseInt(jsonObject.get("vreme_kraja").toString());
-                LocalDate datum_akcije = (LocalDate) jsonObject.get("datum_akcije");
+                String datumaAkc = jsonObject.get("datum_akcije").toString();
+                    LocalDate datum_akcije = LocalDate.parse(datumaAkc);
                 String mesto_odrzavanja = jsonObject.get("mesto_odrzavanja").toString();
                 int id_doktor = Integer.parseInt(jsonObject.get("id_doktora").toString());
                 Doktor doktor = null;
@@ -83,7 +84,8 @@ public class Akcija
         }
         catch (Exception e)
         {
-            System.err.println("Greska pri ucitavanju Akcija.");
+            //System.err.println("Greska pri ucitavanju Akcija.");
+            e.printStackTrace();
         }
 
         return akcijas;
@@ -103,7 +105,7 @@ public class Akcija
                 JSONObject jsonObject = new JSONObject();
 
                 jsonObject.put("id_akcija",a.id_akcije);
-                jsonObject.put("datum_akcije",a.datumAkcije);
+                jsonObject.put("datum_akcije",a.datumAkcije.toString());
                 jsonObject.put("vreme_pocetka",a.vremePocetka);
                 jsonObject.put("vreme_kraja",a.vremeKraja);
                 jsonObject.put("mesto_odrzavanja",a.mestoOdrzavanja);
@@ -389,7 +391,11 @@ public class Akcija
                 if(!postojiDavalac)
                 {
                     System.out.println("Ne postoji davalac sa unetim JMBG, dodajete novog korisnika: ");
-                    Davalac.DodajDavaoca();
+                    Davalac d = Davalac.DodajDavaoca();
+                    if(d!=null)
+                        davaoci_za_akciju.add(d);
+                    else
+                        System.err.println("Neuspesno dodavanje davaoca, pokusajte ponovo");
                 }
             }
             else

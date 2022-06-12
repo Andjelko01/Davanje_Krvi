@@ -44,7 +44,6 @@ public class Doktor extends Osoba{
                 int id = Integer.parseInt(jsonObject.get("id_doktor").toString());
 
                 Doktor doktor = new Doktor(ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol,id);
-                System.out.println(doktor);
                 doktors.add(doktor);
             }
 
