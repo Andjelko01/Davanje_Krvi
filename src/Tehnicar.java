@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Tehnicar extends Osoba{
     private int id_tehnicar;
@@ -124,4 +125,31 @@ public class Tehnicar extends Osoba{
         return id;
     }
 
+    public static void MenuTehnicar()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String meni = "1. Dodaj tehnicara \t2. Izmeni tehnicara \t0. Nazad";
+        int input;
+        do
+        {
+            System.out.println(meni);
+            input = scanner.nextInt();
+
+            switch (input)
+            {
+                case 1:
+                    //Doktor.DodajDoktora();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+        while (input != 0);
+    }
 }

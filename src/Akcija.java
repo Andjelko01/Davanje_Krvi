@@ -242,4 +242,32 @@ public class Akcija
 
         return id;
     }
+
+    public static void MenuAkcija()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String glavni_meni = "1. Dodaj Akciju \t2. Pokreni akciju \t3. Pregledaj izvestaj \t0. Nazad";
+        int input;
+        do
+        {
+            System.out.println(glavni_meni);
+            input = scanner.nextInt();
+
+            switch (input)
+            {
+                case 1:
+                    Akcija.DodajAkciju();
+                    break;
+                case 2:
+                    //Akcija.PokreniAkciju();
+                    break;
+                case 3:
+                    //Izvestaj.PrikaziIzvestaj();
+                    break;
+                default:
+                    break;
+            }
+        }
+        while (input != 0);
+    }
 }

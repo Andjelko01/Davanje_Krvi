@@ -5,6 +5,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Doktor extends Osoba{
     private int id_doktora;
@@ -105,5 +106,33 @@ public class Doktor extends Osoba{
         id++;
 
         return id;
+    }
+
+    public static void MenuDoktor()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String meni = "1. Dodaj doktora \t2. Izmeni doktora \t0. Nazad";
+        int input;
+        do
+        {
+            System.out.println(meni);
+            input = scanner.nextInt();
+
+            switch (input)
+            {
+                case 1:
+                    //Doktor.DodajDoktora();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+        while (input != 0);
     }
 }

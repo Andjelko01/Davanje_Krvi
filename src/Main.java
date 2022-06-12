@@ -16,7 +16,7 @@ public class Main
         Izvestaj.UpisiUJSON(new ArrayList<>(),"izvestaji.json");
 
         Scanner scanner = new Scanner(System.in);
-        String glavni_meni = "1. Dodaj Akciju \t2. Popuni Izvestaj \t3. Pokreni Akciju \t4. \t0. Napusti program";
+        String glavni_meni = "1. Upravljaj Akcijama \t2. Upravljaj doktorima \t3. Upravljaj Tehnicarima \t0. Napusti program";
         int input;
         do
         {
@@ -26,19 +26,19 @@ public class Main
             switch (input)
             {
                 case 1:
-                    Akcija.DodajAkciju();
+                    Akcija.MenuAkcija();
                     break;
                 case 2:
-
+                    Doktor.MenuDoktor();
                     break;
                 case 3:
-
+                    Tehnicar.MenuTehnicar();
                     break;
-                case 4:
-
+                default:
                     break;
             }
         }
         while (input != 0);
+        System.out.println("Program se zatvara, dovidjenja!");
     }
 }
