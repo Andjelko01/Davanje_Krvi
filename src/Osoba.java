@@ -27,11 +27,15 @@ public abstract class Osoba
 
     }
 
-    public static LocalDate getDatumRodjenja(String jmbg)
-    {
-        String datumString=jmbg.substring(0,2)+"."+jmbg.substring(2,4)+"."+((jmbg.charAt(5) =='9')?"2"+jmbg.substring(4,7):"1"+jmbg.substring(4,7));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        return LocalDate.parse(datumString, formatter);
+    public static LocalDate getDatumRodjenja(String jmbg) {
+        try {
+            String datumString = jmbg.substring(0, 2) + "." + jmbg.substring(2, 4) + "." + ((jmbg.charAt(5) == '9') ? "2" + jmbg.substring(4, 7) : "1" + jmbg.substring(4, 7));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            return LocalDate.parse(datumString, formatter);
+        } catch (Exception e) {
+            System.out.println("Niste uneli validan JMBG");
+            return null;
+        }
     }
 
     //Metode za proveru unosa podataka za objekte
@@ -122,4 +126,39 @@ public abstract class Osoba
         return podaci;
     }
     //Kraj metoda za unos podataka za objekat
+
+    //Pocetak metoda za izmenu podataka za objekat
+    public void izmeniPodatke(String vrednost)
+    {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Usli ste u sistem da promenite "+vrednost+" unesite vrednost: ");
+        String promena= scanner.nextLine();
+        switch (vrednost.toLowerCase()){
+            case "ime":
+                ime=promena;
+                break;
+            case "prezime":
+                prezime=promena;
+                break;
+            case "jmbg":
+                jmbg=promena;
+                break;
+            case "adresa":
+                adresa=promena;
+                break;
+            case "telefon":
+                telefon=promena;
+                break;
+            case "imeroditelja":
+                imeRoditelja=promena;
+                break;
+            case "pol":
+                pol=promena;
+                break;
+            default:
+                System.out.println("Uneli ste pogresan paramtar");
+                break;
+        }
+    }
+    //Kraj metoda za izmenu podataka za objekat
 }

@@ -22,35 +22,35 @@ public class Main
 //                null,true));
 //
 //        Davalac.UpisiUJSON(davalacs,"davaoci.json");
-////        Akcija.UpisiUJSON(new ArrayList<>(),"akcije.json");
+//        Akcija.UpisiUJSON(new ArrayList<>(),"akcije.json");
 //        Izvestaj.UpisiUJSON(new ArrayList<>(),"izvestaji.json");
 
-//        Scanner scanner = new Scanner(System.in);
-//        String glavni_meni = "1. Upravljaj Akcijama \t2. Upravljaj doktorima \t3. Upravljaj Tehnicarima \t0. Napusti program";
-//        int input;
-//        do
-//        {
-//            System.out.println(glavni_meni);
-//            input = scanner.nextInt();
-//
-//            switch (input)
-//            {
-//                case 1:
-//                    Akcija.MenuAkcija();
-//                    break;
-//                case 2:
-//                    Doktor.MenuDoktor();
-//                    break;
-//                case 3:
-//                    Tehnicar.MenuTehnicar();
-//                    break;
-//                default:
-//                    break;
-//            }
-//        }
-//        while (input != 0);
-//        System.out.println("Program se zatvara, dovidjenja!");
-        Tehnicar.DodajTehnicara();
+        Scanner scanner = new Scanner(System.in);
+        String glavni_meni = "1. Upravljaj Akcijama \t2. Upravljaj doktorima \t3. Upravljaj Tehnicarima \t0. Napusti program";
+        int input;
+        do
+        {
+            System.out.println(glavni_meni);
+            input = scanner.nextInt();
+
+            switch (input)
+            {
+                case 1:
+                    Akcija.MenuAkcija();
+                    break;
+                case 2:
+                    Doktor.MenuDoktor();
+                    break;
+                case 3:
+                    Tehnicar.MenuTehnicar();
+                    break;
+                default:
+                    break;
+            }
+        }
+        while (input != 0);
+        System.out.println("Program se zatvara, dovidjenja!");
+
 
     }
 }

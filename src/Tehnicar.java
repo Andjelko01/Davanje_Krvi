@@ -144,7 +144,9 @@ public class Tehnicar extends Osoba{
 
                     break;
                 case 3:
-
+                    ArrayList<Tehnicar> tehnicari=UcitajJSON("tehnicar.json");
+                    System.out.println("Unesite redni broj tehnicara koji zelite da izmenite:");
+                    tehnicari.get(Integer.parseInt(scanner.nextLine())).IzmeniTehnicara();
                     break;
                 default:
                     break;
@@ -182,5 +184,18 @@ public class Tehnicar extends Osoba{
         Tehnicar.UpisiUJSON(ucitan,"tehnicari.json");
     }
 
+    public void IzmeniTehnicara(){
+        System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
+        System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol 8.strucnaSprema");
+        Scanner scanner= new Scanner(System.in);
+        String promena=scanner.nextLine();
+        if (promena.toLowerCase().equals("strucnasprema"))
+        {
+            setStrucnaSprema(promena);
+        }
+        else{
+            this.izmeniPodatke(promena);
+        }
+    }
 
 }

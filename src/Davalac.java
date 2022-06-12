@@ -195,7 +195,29 @@ public class Davalac extends Osoba{
 //        poslednjeDavanje = LocalDate.parse(datumDavanja, formatter);
 //        System.out.println(poslednjeDavanje.toString());
 
-        //Davalac davaoc= new Davalac(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),krvnaGrupa,Integer.parseInt(brojDavanja),formatter.format(LocalDate.now()),(godine>=18 || godine<65)?true:false);
+        Davalac davaoc= new Davalac(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),krvnaGrupa,Integer.parseInt(brojDavanja),LocalDate.now(),(godine>=18 || godine<65)?true:false);
+    }
+
+    public void IzmeniDavaoca()
+    {
+        System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
+        System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol 8.krvnaGrupa 9.brojDavanja");
+        Scanner scanner= new Scanner(System.in);
+        String promena=scanner.nextLine();
+        switch(promena.toLowerCase()){
+            case "krvnagrupa":
+                System.out.println("Unesite novu krvu grupu");
+                setKrvnaGrupa(scanner.nextLine());
+                break;
+            case "brojdavanja":
+                System.out.println("Unesite novi broj davanja");
+                setBrojDavanja(scanner.nextInt());
+                break;
+            default:
+                this.izmeniPodatke(promena);
+                break;
+        }
+
     }
 
 }

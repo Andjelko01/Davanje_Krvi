@@ -127,7 +127,9 @@ public class Doktor extends Osoba{
                     System.out.println(Doktor.UcitajJSON("doktori.json"));
                     break;
                 case 3:
-
+                    ArrayList<Doktor> doktori=UcitajJSON("doktori.json");
+                    System.out.println("Unesite redni broj doktora koji zelite da izmenite:");
+                    doktori.get(Integer.parseInt(scanner.nextLine())).IzmeniDoktora();
                     break;
                 default:
                     break;
@@ -147,6 +149,13 @@ public class Doktor extends Osoba{
             return;
         }
         Doktor t=new Doktor(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId());
+    }
+    public void IzmeniDoktora()
+    {
+        System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
+        System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol");
+        Scanner scanner= new Scanner(System.in);
+        this.izmeniPodatke(scanner.nextLine());
     }
 
     @Override
