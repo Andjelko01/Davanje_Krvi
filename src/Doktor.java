@@ -30,10 +30,10 @@ public class Doktor extends Osoba{
         {
             JSONArray jsonArray = (JSONArray) new JSONParser().parse(new FileReader(path_name));
 
-            for (Object o:jsonArray
-            )
+            for (Object o:jsonArray)
             {
                 JSONObject jsonObject = (JSONObject) o;
+
                 String ime = jsonObject.get("ime").toString();
                 String prezime = jsonObject.get("prezime").toString();
                 String jmbg = jsonObject.get("jmbg").toString();
@@ -44,6 +44,7 @@ public class Doktor extends Osoba{
                 int id = Integer.parseInt(jsonObject.get("id_doktor").toString());
 
                 Doktor doktor = new Doktor(ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol,id);
+                System.out.println(doktor);
                 doktors.add(doktor);
             }
 
