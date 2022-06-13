@@ -163,6 +163,12 @@ public class Akcija
                 }
             }while(!isDateValid);
 
+            if(Doktor.DostupniDoktori(date).size() < 1 ||
+                Tehnicar.DostupniTehnicari(date).size() < 2)
+            {
+                System.err.println("Nema dovoljno slobodnog osoblja za izabrani datum");
+                return;
+            }
 
             System.out.print("Unesite vreme pocetka akcije: ");
             int pocetak = scanner.nextInt();
@@ -185,8 +191,6 @@ public class Akcija
             do
             {
                 System.out.print("Unesite mesto odrzavanja akcije: ");
-//                if (scanner.hasNext())
-//                    scanner.next();
                 scanner.reset();
                 mesto = scanner.nextLine();
                 if (mesto.isEmpty())
@@ -207,7 +211,7 @@ public class Akcija
             do
             {
                 System.out.println("Izaberite doktora za akciju");
-                ArrayList<Doktor> doktori = Doktor.UcitajJSON("doktori.json");
+                ArrayList<Doktor> doktori = Doktor.DostupniDoktori(date);
                 //Stampaj doktore
                 for (Doktor d : doktori) {
                     System.out.println(d.getId_doktora() + "." + " " + d.ime + " " + d.prezime);
@@ -244,7 +248,7 @@ public class Akcija
 
             //izbor tehnicara
             ArrayList<Tehnicar> izabraniTehnicari = new ArrayList<>();
-            ArrayList<Tehnicar> tehnicari = Tehnicar.UcitajJSON("tehnicari.json");
+            ArrayList<Tehnicar> tehnicari = Tehnicar.DostupniTehnicari(date);
             for (int i = 0; i < brTehnicara; i++) {
                 boolean isTehValid = true;
                 Tehnicar teh = null;
@@ -340,7 +344,8 @@ public class Akcija
         while (input != 0);
     }
 
-    public static void PokreniAkciju() {
+    public static void PokreniAkciju()
+    {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Akcija> sveAkcije = Akcija.UcitajJSON("akcije.json");
         ArrayList<Izvestaj> sviIzvestaji = Izvestaj.UcitajJSON("izvestaji.json");
@@ -396,7 +401,7 @@ public class Akcija
                 scanner.reset();
                 String jmbg_unos = scanner.nextLine();
                 for (Davalac d : sviDavaoci) {
-                    if (jmbg_unos == d.jmbg) {
+                    if (jmbg_unos.equals(d.jmbg)) {
                         davaoci_za_akciju.add(d);
                         postojiDavalac = true;
                         break;
@@ -415,6 +420,7 @@ public class Akcija
             }
         } while (input != 0);
         System.out.print("Unesite broj odbijenih davalaca: ");
+        scanner.reset();
         int odb = scanner.nextInt();
 
         System.out.println("Stampanje izvestaja...");
