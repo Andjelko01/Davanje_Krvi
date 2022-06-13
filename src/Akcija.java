@@ -298,6 +298,7 @@ public class Akcija
 
     }
 
+
     private static int getNextId()
     {
         int id = 0;
@@ -339,88 +340,85 @@ public class Akcija
         while (input != 0);
     }
 
-    public static void PokreniAkciju()
-    {
+    public static void PokreniAkciju() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Akcija> sveAkcije = Akcija.UcitajJSON("akcije.json");
         ArrayList<Izvestaj> sviIzvestaji = Izvestaj.UcitajJSON("izvestaji.json");
         ArrayList<Davalac> sviDavaoci = Davalac.UcitajJSON("davaoci.json");
 
+        //Prikaz akcija koje su danas i koje se nisu desile
+
         boolean exist = false;
         ArrayList<Akcija> moguceAkcije = new ArrayList<>();
-        for(Akcija a: sveAkcije)
-        {
+        for (Akcija a : sveAkcije) {
             exist = false;
-            for (Izvestaj i: sviIzvestaji)
-            {
-                if(a.id_akcije == i.getId_akcije())
-                {
+            for (Izvestaj i : sviIzvestaji) {
+                if (a.id_akcije == i.getId_akcije()) {
                     exist = true;
                     break;
                 }
             }
 
-            if(a.datumAkcije == LocalDate.now() && !exist)
+            if (a.datumAkcije.equals(LocalDate.now()) && !exist)
                 moguceAkcije.add(a);
         }
 
+        Akcija izabrana_akcija = null;
+        //Izaberi akciju
         System.out.println("Izaberite akciju, ili unesite 0 da otkazete pokretanje akcije: ");
-        for(Akcija a: moguceAkcije) {
-            System.out.println(a.id_akcije + ". " + a.vremePocetka + " - " + a.vremeKraja + " " + a.mestoOdrzavanja);
+        for (Akcija a : moguceAkcije) {
+            System.out.println(a.id_akcije + ". " + a.vremePocetka + " - " + a.vremeKraja + " " + a.mestoOdrzavanja + " " + a.datumAkcije);
         }
         int izbor;
         boolean valid = false;
         do {
             izbor = scanner.nextInt();
-            if(izbor == 0)
+            if (izbor == 0)
                 return;
-            for (Akcija a: moguceAkcije)
-            {
-                if(izbor == a.id_akcije)
-                {
+            for (Akcija a : moguceAkcije) {
+                if (izbor == a.id_akcije) {
                     valid = true;
+                    izabrana_akcija = a;
                 }
             }
-        }while(!valid);
+        } while (!valid);
 
         int input;
         ArrayList<Davalac> davaoci_za_akciju = new ArrayList<>();
-        do
-        {
+        do {
             System.out.println("1. Izaberi Davaoca \t0. Zavrsi akciju i odstampaj izvestaj");
             input = scanner.nextInt();
             boolean postojiDavalac = false;
 
-            if(input==1)
-            {
+            if (input == 1) {
                 postojiDavalac = false;
                 System.out.println("Unesite jmbg korisnika");
-                if(scanner.hasNext())
-                    scanner.next();
+                scanner.reset();
                 String jmbg_unos = scanner.nextLine();
-                for(Davalac d :sviDavaoci)
-                {
-                    if(jmbg_unos == d.jmbg)
-                    {
+                for (Davalac d : sviDavaoci) {
+                    if (jmbg_unos == d.jmbg) {
                         davaoci_za_akciju.add(d);
                         postojiDavalac = true;
                         break;
                     }
                 }
-                if(!postojiDavalac)
-                {
+                if (!postojiDavalac) {
                     System.out.println("Ne postoji davalac sa unetim JMBG, dodajete novog korisnika: ");
                     Davalac d = Davalac.DodajDavaoca();
-                    if(d!=null)
+                    if (d != null)
                         davaoci_za_akciju.add(d);
                     else
                         System.err.println("Neuspesno dodavanje davaoca, pokusajte ponovo");
                 }
-            }
-            else
-            {
+            } else {
                 System.err.println("Greska, pokusajte ponovo!");
             }
-        }while (input!=0);
+        } while (input != 0);
+        System.out.print("Unesite broj odbijenih davalaca: ");
+        int odb = scanner.nextInt();
+
+        System.out.println("Stampanje izvestaja...");
+        Izvestaj.StampajIzvestaj(izabrana_akcija, davaoci_za_akciju, odb);
     }
+
 }
