@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="Changes by Andjelko V1.0">
+    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="Changes by Andjelko V1.1">
+      <change afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/akcije.json" beforeDir="false" afterPath="$PROJECT_DIR$/akcije.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/davaoci.json" beforeDir="false" afterPath="$PROJECT_DIR$/davaoci.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doktori.json" beforeDir="false" afterPath="$PROJECT_DIR$/doktori.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/izvestaji.json" beforeDir="false" afterPath="$PROJECT_DIR$/izvestaji.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Davalac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Davalac.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Izvestaj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Izvestaj.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Osoba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tehnicar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehnicar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validacija.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tehnicari.json" beforeDir="false" afterPath="$PROJECT_DIR$/tehnicari.json" afterDir="false" />
     </list>
-    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic v1.0">
+    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic v1.1">
       <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Izvestaj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Izvestaj.java" afterDir="false" />
     </list>
@@ -24,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -33,10 +36,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Izvestaj.java">
+    <file path="$PROJECT_DIR$/src/Akcija.java">
       <ranges>
-        <range start1="8" end1="8" start2="8" end2="9" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="181" end1="181" start2="182" end2="242" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="165" end1="165" start2="165" end2="171" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="183" end1="185" start2="189" end2="191" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="187" end1="189" start2="193" end2="193" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="209" end1="210" start2="213" end2="214" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="246" end1="247" start2="250" end2="251" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="333" end1="334" start2="337" end2="339" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="342" end1="343" start2="347" end2="349" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="395" end1="396" start2="401" end2="403" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="398" end1="399" start2="405" end2="406" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="417" end1="417" start2="424" end2="425" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
       </ranges>
     </file>
   </component>
@@ -61,12 +72,19 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;codetogether.settings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Davanje Krvi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestMain" />
       <module name="Davanje Krvi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,6 +93,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestMain" />
       </list>
     </recent_temporary>
   </component>
@@ -88,7 +107,9 @@
       <updated>1654886848595</updated>
       <workItem from="1654886856349" duration="7325000" />
       <workItem from="1654925984538" duration="315000" />
-      <workItem from="1655106623277" duration="10295000" />
+      <workItem from="1655106623277" duration="10504000" />
+      <workItem from="1655129856506" duration="948000" />
+      <workItem from="1655130845208" duration="9046000" />
     </task>
     <task id="LOCAL-00001" summary="V0.1">
       <created>1654893899010</created>
@@ -153,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655074315459</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Changes by Andjelko V1.1">
+      <created>1655125054659</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655125054659</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes by milanceandrejic v1.1">
+      <created>1655125136573</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655125136573</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +217,9 @@
     <MESSAGE value="Changes by Milache &amp; Andjelko V1.0" />
     <MESSAGE value="Changes by milanceandrejic v1.0" />
     <MESSAGE value="Changes by Andjelko V1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Andjelko V1.0" />
+    <MESSAGE value="Changes by Andjelko V1.1" />
+    <MESSAGE value="Changes by milanceandrejic v1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by milanceandrejic v1.1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

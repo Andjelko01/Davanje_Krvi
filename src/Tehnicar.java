@@ -4,6 +4,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -185,7 +186,7 @@ public class Tehnicar extends Osoba{
             return;
         }
         do {
-            System.out.println("Unesite strucnu spremu tehnicara");
+            System.out.print("Unesite strucnu spremu tehnicara: ");
             strucnaSprema=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(strucnaSprema)){
@@ -227,6 +228,28 @@ public class Tehnicar extends Osoba{
     public String toString()
     {
         return id_tehnicar+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
+    }
+    public static ArrayList<Tehnicar> DostupniTehnicari(LocalDate datum)
+    {
+        ArrayList<Tehnicar> tehnicari=Tehnicar.UcitajJSON("tehnicari.json");
+        ArrayList<Akcija> akcije=Akcija.UcitajJSON("akcije.json");
+        for (Akcija a:akcije)
+        {
+            if(a.datumAkcije.equals(datum))
+            {
+                for (Tehnicar teh:a.tehnicari)
+                {
+                    for (int i=0;i<tehnicari.size();i++)
+                    {
+                        if (teh.id_tehnicar==tehnicari.get(i).id_tehnicar)
+                        {
+                            tehnicari.remove(i--);
+                        }
+                    }
+                }
+            }
+        }
+        return tehnicari;
     }
 
 }

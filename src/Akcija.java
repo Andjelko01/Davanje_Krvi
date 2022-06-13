@@ -187,8 +187,8 @@ public class Akcija
             }
             String mesto;
             boolean isMestoEmpty = false;
-
-            do
+        scanner.reset();
+        do
             {
                 System.out.print("Unesite mesto odrzavanja akcije: ");
                 scanner.reset();
@@ -335,7 +335,8 @@ public class Akcija
                     Akcija.PokreniAkciju();
                     break;
                 case 3:
-                    //Izvestaj.PrikaziIzvestaj();
+                    Izvestaj.PrikazIzvestaja();
+
                     break;
                 default:
                     break;
@@ -398,7 +399,8 @@ public class Akcija
             if (input == 1) {
                 postojiDavalac = false;
                 System.out.println("Unesite jmbg korisnika");
-                scanner.reset();
+                if(scanner.hasNext())
+                    scanner.nextLine();
                 String jmbg_unos = scanner.nextLine();
                 for (Davalac d : sviDavaoci) {
                     if (jmbg_unos.equals(d.jmbg)) {

@@ -4,6 +4,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -191,4 +192,26 @@ public class Doktor extends Osoba{
     {
         return id_doktora+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
     }
+
+    //Samo dostpuni doktori za taj datum
+    public static ArrayList<Doktor> DostupniDoktori(LocalDate datum)
+    {
+        ArrayList<Doktor> doktori=Doktor.UcitajJSON("doktori.json");
+        ArrayList<Akcija> akcije=Akcija.UcitajJSON("akcije.json");
+        for (Akcija a:akcije)
+        {
+                if(a.datumAkcije.equals(datum))
+                {
+                    for (int i=0;i<doktori.size();i++)
+                    {
+                        if (doktori.get(i).id_doktora==a.doktor.id_doktora)
+                        {
+                            doktori.remove(i--);
+                        }
+                    }
+                }
+            }
+        return doktori;
+    }
+
 }
