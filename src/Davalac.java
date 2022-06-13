@@ -182,7 +182,7 @@ public class Davalac extends Osoba{
                     ArrayList<Davalac> davaoci=UcitajJSON("davaoci.json");
                     for (Davalac d:davaoci)
                     {
-                        System.out.println(d.id_davaoca + ". " + d.ime + " " + d.prezime + " - " + d.jmbg);
+                        System.out.println(d);
                     }
                     System.out.println("Unesite redni broj davaoca koji zelite da izmenite:");
                     int rb=scanner.nextInt();
@@ -194,6 +194,8 @@ public class Davalac extends Osoba{
                             d.IzmeniDavaoca();
                         }
                     }
+                    UpisiUJSON(davaoci,"davaoci.json");
+
                     break;
                 case 3:
 
@@ -210,41 +212,55 @@ public class Davalac extends Osoba{
         String krvnaGrupa,brojDavanja,datumDavanja;
         LocalDate poslednjeDavanje;
         boolean aktivan;
-        Scanner scanner= new Scanner(System.in);
-        System.out.println("Dodavanje davaoca je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
-        String[] podaci=DodajOsobu();
-        if (podaci==null)
+        boolean postojiDavalac;
+        int godine=0;
+        ArrayList<Davalac> sviDavaoci = Davalac.UcitajJSON("davaoci.json");
+        String[] podaci=null;
+        do
         {
-            return null;
-        }
-        do {
-            System.out.println("Unesite krvnu grupu");
-            krvnaGrupa=scanner.nextLine();
-            scanner.reset();
-            if (PrekidUnosa(krvnaGrupa)){
+            Scanner scanner= new Scanner(System.in);
+            System.out.println("Dodavanje davaoca je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
+            podaci=DodajOsobu();
+            if (podaci==null)
+            {
                 return null;
             }
-        }while(ProveraStringa(krvnaGrupa));
-        do {
-            System.out.println("Unesite broj davanja");
-            brojDavanja=scanner.nextLine();
-            scanner.reset();
-            if (PrekidUnosa(brojDavanja)){
-                return null;
-            }
-        }while(ProveraStringa(brojDavanja));
-        int godine= getDatumRodjenja(podaci[2]).getYear()-LocalDate.now().getYear();
+            do {
+                System.out.println("Unesite krvnu grupu");
+                krvnaGrupa=scanner.nextLine();
+                scanner.reset();
+                if (PrekidUnosa(krvnaGrupa)){
+                    return null;
+                }
+            }while(ProveraStringa(krvnaGrupa));
+            do {
+                System.out.println("Unesite broj davanja");
+                brojDavanja=scanner.nextLine();
+                scanner.reset();
+                if (PrekidUnosa(brojDavanja)){
+                    return null;
+                }
+            }while(ProveraStringa(brojDavanja));
 
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-//        datumDavanja = LocalDate.now().toString();
-//        poslednjeDavanje = LocalDate.parse(datumDavanja, formatter);
-//        System.out.println(poslednjeDavanje.toString());
+                System.out.println(getDatumRodjenja(podaci[2]).getYear());
+
+             godine= getDatumRodjenja(podaci[2]).getYear()-LocalDate.now().getYear();
+            postojiDavalac=false;
+            for (Davalac t:sviDavaoci)
+            {
+                if (podaci[2].equals(t.jmbg))
+                {
+                    postojiDavalac=true;
+                    System.out.println("Vec postoji davalac sa tim JMBG molim vas unesite ponovo tehnicara");
+                }
+            }
+
+        }while(postojiDavalac);
 
         Davalac davaoc= new Davalac(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),krvnaGrupa,Integer.parseInt(brojDavanja),LocalDate.now(),(godine>=18 || godine<65)?true:false);
-        ArrayList<Davalac> sviDavaoci = Davalac.UcitajJSON("davaoci.json");
         sviDavaoci.add(davaoc);
         Davalac.UpisiUJSON(sviDavaoci,"davaoci.json");
-        System.out.println(davaoc);
+        System.out.println("Uspesno ste dodali davaoca");
         return davaoc;
     }
 
@@ -270,5 +286,16 @@ public class Davalac extends Osoba{
         }
 
     }
+    public void AzurirajDavaoca()
+    {
+        this.poslednjeDavanje=LocalDate.now();
+        this.brojDavanja++;
+    }
+    @Override
+    public String toString()
+    {
+        return id_davaoca+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
+    }
+
 
 }

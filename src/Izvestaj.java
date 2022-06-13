@@ -179,4 +179,64 @@ public class Izvestaj
         }
     }
 
+    public static void StampajIzvestaj(Akcija akcija, ArrayList<Davalac> davaoci_akcije,int brojOdbijenih)
+    {
+        ArrayList<Davalac> sviDavaoci = Davalac.UcitajJSON("davaoci.json");
+        int brojPrvih = 0;
+        int brojZena = 0;
+        int brojMuskaraca = 0;
+        for (Davalac d:davaoci_akcije)
+        {
+            for (Davalac da: sviDavaoci)
+            {
+                if(d.getId_davaoca() == da.getId_davaoca())
+                    da.AzurirajDavaoca();
+            }
+
+            if(d.getBrojDavanja() == 1)
+                brojPrvih++;
+
+            if(d.pol.toLowerCase() == "musko" || d.pol.toLowerCase() == "muski" || d.pol.toLowerCase() == "m")
+                brojMuskaraca++;
+            else
+                brojZena++;
+        }
+
+        ArrayList<Izvestaj> sviIzvestaji = Izvestaj.UcitajJSON("izvestaji.json");
+        Izvestaj izvestaj = new Izvestaj(akcija.id_akcije,davaoci_akcije.size(),brojPrvih,brojZena,brojMuskaraca,brojOdbijenih,davaoci_akcije);
+        sviIzvestaji.add(izvestaj);
+        Izvestaj.UpisiUJSON(sviIzvestaji,"izvestaji.json");
+    }
+
+    public static void PrikazIzvestaja()
+    {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Izvestaj> sviIzvestaji = Izvestaj.UcitajJSON("izvestaji.json");
+        ArrayList<Akcija> sveAkcije = Akcija.UcitajJSON("akcije.json");
+        Akcija izabrana_akcija = null;
+
+        int izbor = -1;
+        System.out.println("Izaberite akciju ili unesite 0 da prekinete akciju");
+        do
+        {
+            for (Akcija a: sveAkcije)
+            {
+                System.out.println(a.id_akcije + ". " + a.datumAkcije + " " + a.vremePocetka + "-" + a.vremeKraja + " - " + a.mestoOdrzavanja);
+            }
+            izbor = scanner.nextInt();
+            for (Akcija a: sveAkcije)
+            {
+                if(a.id_akcije == izbor)
+                {
+                    izabrana_akcija = a;
+                    break;
+                }
+            }
+
+            if(izabrana_akcija == null)
+                System.err.println("Nema akcije za izabrani id");
+        }
+        while (izbor!=0 || izabrana_akcija==null);
+    }
+
 }

@@ -155,13 +155,27 @@ public class Doktor extends Osoba{
     public static void DodajDoktora()
     {
         Scanner scanner= new Scanner(System.in);
-        System.out.println("Dodavanje doktora je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
-        int id_doktora;
-        String[] podaci=DodajOsobu();
-        if (podaci==null)
+        String[] podaci=null;
+        ArrayList<Doktor> doktori=UcitajJSON("doktori.json");
+        boolean postojiDoktor=false;
+        do
         {
-            return;
-        }
+            System.out.println("Dodavanje doktora je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
+            podaci=DodajOsobu();
+            postojiDoktor=false;
+            if (podaci==null)
+            {
+                return;
+            }
+            for (Doktor d:doktori)
+            {
+                if (podaci[2].equals(d.jmbg))
+                {
+                    postojiDoktor=true;
+                    System.out.println("Vec postoji doktor sa tim JMBG molim vas unesite ponovo tehnicara");
+                }
+            }
+        }while(postojiDoktor);
         Doktor t=new Doktor(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId());
     }
     public void IzmeniDoktora()

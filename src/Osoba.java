@@ -28,13 +28,22 @@ public abstract class Osoba
     }
 
     public static LocalDate getDatumRodjenja(String jmbg) {
-        try {
-            String datumString = jmbg.substring(0, 2) + "." + jmbg.substring(2, 4) + "." + ((jmbg.charAt(5) == '9') ? "2" + jmbg.substring(4, 7) : "1" + jmbg.substring(4, 7));
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-            return LocalDate.parse(datumString, formatter);
-        } catch (Exception e) {
-            System.out.println("Niste uneli validan JMBG");
-            return null;
+        if (!jmbg.equals("0000000000000"))
+        {
+            try
+            {
+                String datumString = jmbg.substring(0, 2) + "." + jmbg.substring(2, 4) + "." + ((jmbg.charAt(4) == '9') ? "1" + jmbg.substring(4, 7) : "2" + jmbg.substring(4, 7));
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                return LocalDate.parse(datumString, formatter);
+            } catch (Exception e)
+            {
+               // System.out.println("Niste uneli validan JMBG");
+                return LocalDate.now();
+            }
+        }
+        else
+        {
+            return LocalDate.now();
         }
     }
 
@@ -62,7 +71,8 @@ public abstract class Osoba
         Scanner scanner= new Scanner(System.in);
         String[] podaci=new String[7];
         String ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol;
-        do {
+        do
+        {
             System.out.println("Unesite ime");
             podaci[0]=scanner.nextLine();
             scanner.reset();
@@ -71,7 +81,8 @@ public abstract class Osoba
             }
         }while(ProveraStringa(podaci[0]));
 
-        do {
+        do
+        {
             System.out.println("Unesite prezime");
             podaci[1]=scanner.nextLine();
             scanner.reset();
@@ -80,15 +91,18 @@ public abstract class Osoba
             }
         }while(ProveraStringa(podaci[1]));
 
-        do {
+        do
+        {
             System.out.println("Unesite jmbg");
-            podaci[2]=scanner.nextLine();
+            podaci[2]=ProveraJMBG(scanner.nextLine());
             scanner.reset();
             if (PrekidUnosa(podaci[2])){
                 return null;
             }
         }while(ProveraStringa(podaci[2]));
-        do {
+
+        do
+        {
             System.out.println("Unesite adresu");
             podaci[3]=scanner.nextLine();
             scanner.reset();
@@ -97,7 +111,8 @@ public abstract class Osoba
             }
         }while(ProveraStringa(podaci[3]));
 
-        do {
+        do
+        {
             System.out.println("Unesite telefon");
             podaci[4]=scanner.nextLine();
             scanner.reset();
@@ -106,7 +121,8 @@ public abstract class Osoba
             }
         }while(ProveraStringa(podaci[4]));
 
-        do {
+        do
+        {
             System.out.println("Unesite ime roditelja");
             podaci[5]=scanner.nextLine();
             scanner.reset();
@@ -115,7 +131,8 @@ public abstract class Osoba
             }
         }while(ProveraStringa(podaci[5]));
 
-        do {
+        do
+        {
             System.out.println("Unesite pol (Musko/Zensko)");
             podaci[6]=scanner.nextLine();
             scanner.reset();
@@ -161,4 +178,45 @@ public abstract class Osoba
         }
     }
     //Kraj metoda za izmenu podataka za objekat
+
+    public static String ProveraJMBG(String jmbg)
+    {
+        if (jmbg.length()==13)
+        {
+            switch(Integer.parseInt(jmbg.substring(2,4)))
+            {
+                case 1,3,5,7,8,10,12:
+                    if (Integer.parseInt(jmbg.substring(0,2))<=31)
+                    {
+                        return jmbg;
+                    }
+                    else
+                    {
+                       return "0000000000000";
+                    }
+                case 4,6,9,11:
+                    if (Integer.parseInt(jmbg.substring(0,2))<=30)
+                    {
+                        return jmbg;
+                    }
+                    else
+                    {
+                        return "0000000000000";
+                    }
+                case 2:
+                    if (Integer.parseInt(jmbg.substring(0,2))<=29)
+                    {
+                        return jmbg;
+                    }
+                    else
+                    {
+                        return "0000000000000";
+                    }
+                default:
+                    return "0000000000000";
+            }
+
+        }
+        return "0";
+    }
 }

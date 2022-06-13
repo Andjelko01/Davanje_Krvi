@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="Changes by Andjelko v0.8">
-      <change afterPath="$PROJECT_DIR$/src/Validacija.java" afterDir="false" />
+    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="Changes by Andjelko V1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/akcije.json" beforeDir="false" afterPath="$PROJECT_DIR$/akcije.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/davaoci.json" beforeDir="false" afterPath="$PROJECT_DIR$/davaoci.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doktori.json" beforeDir="false" afterPath="$PROJECT_DIR$/doktori.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/izvestaji.json" beforeDir="false" afterPath="$PROJECT_DIR$/izvestaji.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Davalac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Davalac.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Izvestaj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Izvestaj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Osoba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tehnicar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehnicar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tehnicari.json" beforeDir="false" afterPath="$PROJECT_DIR$/tehnicari.json" afterDir="false" />
     </list>
-    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic v0.8">
+    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic v1.0">
       <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Davalac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Davalac.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Izvestaj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Izvestaj.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,53 +33,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Davalac.java">
+    <file path="$PROJECT_DIR$/src/Izvestaj.java">
       <ranges>
-        <range start1="91" end1="92" start2="91" end2="93" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="101" end1="102" start2="102" end2="104" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="130" end1="131" start2="132" end2="133" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="162" end1="163" start2="164" end2="208" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="172" end1="173" start2="217" end2="218" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="179" end1="180" start2="224" end2="225" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="187" end1="188" start2="232" end2="233" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="198" end1="198" start2="243" end2="248" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="206" end1="207" start2="256" end2="258" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Akcija.java">
-      <ranges>
-        <range start1="42" end1="44" start2="42" end2="43" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="50" end1="51" start2="49" end2="51" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="85" end1="86" start2="85" end2="87" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="105" end1="106" start2="106" end2="107" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="140" end1="141" start2="141" end2="141" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="142" end1="144" start2="142" end2="145" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="146" end1="147" start2="147" end2="148" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="151" end1="153" start2="152" end2="155" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="156" end1="158" start2="158" end2="161" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="160" end1="161" start2="163" end2="164" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="179" end1="180" start2="182" end2="183" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="184" end1="184" start2="187" end2="190" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="187" end1="188" start2="193" end2="194" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="189" end1="192" start2="195" end2="198" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="193" end1="194" start2="199" end2="200" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="197" end1="199" start2="203" end2="204" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="200" end1="222" start2="205" end2="229" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="223" end1="231" start2="230" end2="245" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="233" end1="240" start2="247" end2="258" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="241" end1="242" start2="259" end2="260" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="243" end1="270" start2="261" end2="292" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="271" end1="276" start2="293" end2="297" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="391" end1="392" start2="412" end2="417" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Doktor.java">
-      <ranges>
-        <range start1="46" end1="47" start2="46" end2="46" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
-        <range start1="119" end1="120" start2="118" end2="118" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="126" end1="127" start2="124" end2="146" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="128" end1="133" start2="147" end2="147" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
-        <range start1="161" end1="171" start2="175" end2="178" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+        <range start1="8" end1="8" start2="8" end2="9" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="181" end1="181" start2="182" end2="242" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
       </ranges>
     </file>
   </component>
@@ -97,19 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "C:/Users/Andjelko/IdeaProjects/Davanje Krvi/json-simple-1.1.1.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "codetogether.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andjelko/IdeaProjects/Davanje Krvi/json-simple-1.1.1.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;codetogether.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -134,6 +88,7 @@
       <updated>1654886848595</updated>
       <workItem from="1654886856349" duration="7325000" />
       <workItem from="1654925984538" duration="315000" />
+      <workItem from="1655106623277" duration="10295000" />
     </task>
     <task id="LOCAL-00001" summary="V0.1">
       <created>1654893899010</created>
@@ -184,7 +139,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655062213031</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changes by milanceandrejic v1.0">
+      <created>1655074295278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655074295278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by Andjelko V1.0">
+      <created>1655074315459</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655074315459</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +178,11 @@
     <MESSAGE value="V0.9" />
     <MESSAGE value="Changes by milanceandrejic v0.8" />
     <MESSAGE value="Changes by Andjelko v0.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Andjelko v0.8" />
+    <MESSAGE value="Changes by Milache V1.0" />
+    <MESSAGE value="Changes by Milache &amp; Andjelko V1.0" />
+    <MESSAGE value="Changes by milanceandrejic v1.0" />
+    <MESSAGE value="Changes by Andjelko V1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Andjelko V1.0" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

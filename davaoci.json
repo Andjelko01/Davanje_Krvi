@@ -1,16 +1,1 @@
-[
-  {
-    "ime": "Mirko",
-    "prezime": "Mitric",
-    "broj_davanja": 23,
-    "poslednje_davanje": "2022-06-13",
-    "aktivan": true,
-    "ime_roditelja": "Mitar",
-    "telefon": "06132132113",
-    "adresa": "Petra Petrovica 23, Beograd",
-    "jmbg": "1308001254689",
-    "pol": "Musko",
-    "id_davalac": 1,
-    "krvna_grupa": "A+"
-  }
-]
+[{"ime":"Mirko","prezime":"Mitric","broj_davanja":23,"poslednje_davanje":"2022-06-13","aktivan":true,"ime_roditelja":"Mitar","telefon":"06132132113","adresa":"Petra Petrovica 23, Beograd","jmbg":"1308001254689","pol":"Musko","id_davalac":1,"krvna_grupa":"A+"},{"ime":"Milos","prezime":"Milanovic","broj_davanja":0,"poslednje_davanje":"2022-06-13","aktivan":true,"ime_roditelja":"Dragomir","telefon":"+381657588107","adresa":"Jovana Krajisnika 21, Smederevo","jmbg":"1305000430024","pol":"Muski","id_davalac":2,"krvna_grupa":"O"},{"ime":"Test","prezime":"test","broj_davanja":2,"poslednje_davanje":"2022-06-13","aktivan":true,"ime_roditelja":"dsadas","telefon":"1321","adresa":"dsadsa","jmbg":"0","pol":"dsa","id_davalac":3,"krvna_grupa":"d"},{"ime":"Miroslav","prezime":"Dragojlovic","broj_davanja":0,"poslednje_davanje":"2022-06-13","aktivan":true,"ime_roditelja":"Mladen","telefon":"0657687342","adresa":"Vojislava Ilica 156,Beograd","jmbg":"0304976440062","pol":"Muski","id_davalac":4,"krvna_grupa":"B-"}]

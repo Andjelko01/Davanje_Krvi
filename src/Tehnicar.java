@@ -145,7 +145,7 @@ public class Tehnicar extends Osoba{
                     ArrayList<Tehnicar> tehnicari=UcitajJSON("tehnicari.json");
                     for (Tehnicar t:tehnicari)
                     {
-                        System.out.println(t.id_tehnicar + ". " + t.ime + " " + t.prezime + " - " + t.jmbg);
+                        System.out.println(t);
                     }
                     System.out.println("Unesite redni broj tehnicara koji zelite da izmenite:");
                     int rb=scanner.nextInt();
@@ -156,6 +156,8 @@ public class Tehnicar extends Osoba{
                             t.IzmeniTehnicara();
                         }
                     }
+                    UpisiUJSON(tehnicari,"tehnicari.json");
+
                     break;
                 default:
                     break;
@@ -169,11 +171,15 @@ public class Tehnicar extends Osoba{
 
     public static void DodajTehnicara()
     {
+        boolean postojiTehnicar=false;
+        ArrayList<Tehnicar> ucitan = Tehnicar.UcitajJSON("tehnicari.json");
+        String strucnaSprema;
+        String[] podaci=null;
+        do
+        {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Dodavanje tehnicara je u toku, u svakom trenutku mozete da uneste stop kako bi prekinuli unos");
-        int id_tehnicar;
-        String strucnaSprema;
-        String[] podaci=DodajOsobu();
+        podaci=DodajOsobu();
         if (podaci==null)
         {
             return;
@@ -186,9 +192,19 @@ public class Tehnicar extends Osoba{
                 return;
             }
         }while(ProveraStringa(strucnaSprema));
+            postojiTehnicar=false;
+        for (Tehnicar t:ucitan)
+        {
+            if (podaci[2].equals(t.jmbg))
+            {
+                postojiTehnicar=true;
+                System.out.println("Vec postoji tehnicar sa tim JMBG molim vas unesite ponovo tehnicara");
+            }
+
+        }
+        }while(postojiTehnicar);
         Tehnicar t=new Tehnicar(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),strucnaSprema);
 
-        ArrayList<Tehnicar> ucitan = Tehnicar.UcitajJSON("tehnicari.json");
         ucitan.add(t);
         Tehnicar.UpisiUJSON(ucitan,"tehnicari.json");
     }
@@ -205,6 +221,12 @@ public class Tehnicar extends Osoba{
         else{
             this.izmeniPodatke(promena);
         }
+    }
+
+    @Override
+    public String toString()
+    {
+        return id_tehnicar+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
     }
 
 }
