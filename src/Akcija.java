@@ -192,6 +192,8 @@ public class Akcija
             {
                 System.out.print("Unesite mesto odrzavanja akcije: ");
                 scanner.reset();
+                if(scanner.hasNext())
+                    scanner.next();
                 mesto = scanner.nextLine();
                 if (mesto.isEmpty())
                 {
