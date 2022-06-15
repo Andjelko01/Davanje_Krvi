@@ -185,8 +185,15 @@ public class Davalac extends Osoba{
                         System.out.println(d);
                     }
                     System.out.println("Unesite redni broj davaoca koji zelite da izmenite:");
-                    int rb=scanner.nextInt();
-
+                    int rb=0;
+                    try
+                    {
+                        rb=scanner.nextInt();
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println("Niste uneli validan broj davaoca");
+                    }
                     for (Davalac d:davaoci)
                     {
                         if (d.id_davaoca==rb)
@@ -209,6 +216,7 @@ public class Davalac extends Osoba{
 
     public static Davalac DodajDavaoca()
     {
+
         String krvnaGrupa,brojDavanja,datumDavanja;
         LocalDate poslednjeDavanje;
         boolean aktivan;
@@ -226,7 +234,7 @@ public class Davalac extends Osoba{
                 return null;
             }
             do {
-                System.out.println("Unesite krvnu grupu");
+                System.out.print("Unesite krvnu grupu: ");
                 krvnaGrupa=scanner.nextLine();
                 scanner.reset();
                 if (PrekidUnosa(krvnaGrupa)){
@@ -234,15 +242,13 @@ public class Davalac extends Osoba{
                 }
             }while(ProveraStringa(krvnaGrupa));
             do {
-                System.out.println("Unesite broj davanja");
+                System.out.print("Unesite broj davanja: ");
                 brojDavanja=scanner.nextLine();
                 scanner.reset();
                 if (PrekidUnosa(brojDavanja)){
                     return null;
                 }
             }while(ProveraStringa(brojDavanja));
-
-                System.out.println(getDatumRodjenja(podaci[2]).getYear());
 
              godine= getDatumRodjenja(podaci[2]).getYear()-LocalDate.now().getYear();
             postojiDavalac=false;
@@ -251,7 +257,7 @@ public class Davalac extends Osoba{
                 if (podaci[2].equals(t.jmbg))
                 {
                     postojiDavalac=true;
-                    System.out.println("Vec postoji davalac sa tim JMBG molim vas unesite ponovo tehnicara");
+                    System.out.println("Vec postoji davalac sa tim JMBG molim vas unesite ponovo davaoca");
                 }
             }
 

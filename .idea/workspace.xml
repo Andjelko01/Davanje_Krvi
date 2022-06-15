@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="v0.5">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="Changes by Andjelko V1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/davaoci.json" beforeDir="false" afterPath="$PROJECT_DIR$/davaoci.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doktori.json" beforeDir="false" afterPath="$PROJECT_DIR$/doktori.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/izvestaji.json" beforeDir="false" afterPath="$PROJECT_DIR$/izvestaji.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Davalac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Davalac.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Izvestaj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Izvestaj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Osoba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tehnicar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehnicar.java" afterDir="false" />
     </list>
-    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic" />
+    <list id="c4521c7d-1268-4285-8772-bcf00e27ed7f" name="Changes by milanceandrejic" comment="Changes by milanceandrejic v1.0">
+      <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Izvestaj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Izvestaj.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +24,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Izvestaj.java">
+      <ranges>
+        <range start1="8" end1="8" start2="8" end2="9" changelist="c4521c7d-1268-4285-8772-bcf00e27ed7f" />
+        <range start1="181" end1="181" start2="182" end2="242" changelist="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,15 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andjelko/IdeaProjects/Davanje Krvi/json-simple-1.1.1.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;codetogether.settings&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -70,8 +88,7 @@
       <updated>1654886848595</updated>
       <workItem from="1654886856349" duration="7325000" />
       <workItem from="1654925984538" duration="315000" />
-      <workItem from="1654932365365" duration="16643000" />
-      <workItem from="1655021884299" duration="1984000" />
+      <workItem from="1655106623277" duration="10295000" />
     </task>
     <task id="LOCAL-00001" summary="V0.1">
       <created>1654893899010</created>
@@ -94,35 +111,49 @@
       <option name="project" value="LOCAL" />
       <updated>1654926111418</updated>
     </task>
-    <task id="LOCAL-00004" summary="V0.2">
-      <created>1654944836717</created>
+    <task id="LOCAL-00004" summary="Changes by milanceandrejic v0.8">
+      <created>1655051811583</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1654944836717</updated>
+      <updated>1655051811583</updated>
     </task>
-    <task id="LOCAL-00005" summary="v0.3">
-      <created>1654957898619</created>
+    <task id="LOCAL-00005" summary="V0.9">
+      <created>1655051852609</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1654957898619</updated>
+      <updated>1655051852609</updated>
     </task>
-    <task id="LOCAL-00006" summary="v0.4">
-      <created>1654958116192</created>
+    <task id="LOCAL-00006" summary="Changes by milanceandrejic v0.8">
+      <created>1655062185677</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1654958116192</updated>
+      <updated>1655062185677</updated>
     </task>
-    <task id="LOCAL-00007" summary="v0.5">
-      <created>1654980810497</created>
+    <task id="LOCAL-00007" summary="Changes by Andjelko v0.8">
+      <created>1655062213031</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1654980810497</updated>
+      <updated>1655062213031</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changes by milanceandrejic v1.0">
+      <created>1655074295278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655074295278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by Andjelko V1.0">
+      <created>1655074315459</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655074315459</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,14 +171,25 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="V0.1" />
     <MESSAGE value="Changes by milanceandrejic" />
-    <MESSAGE value="V0.2" />
-    <MESSAGE value="v0.3" />
-    <MESSAGE value="v0.4" />
-    <MESSAGE value="v0.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.5" />
+    <MESSAGE value="V0.7" />
+    <MESSAGE value="V0.8" />
+    <MESSAGE value="V0.9" />
+    <MESSAGE value="Changes by milanceandrejic v0.8" />
+    <MESSAGE value="Changes by Andjelko v0.8" />
+    <MESSAGE value="Changes by Milache V1.0" />
+    <MESSAGE value="Changes by Milache &amp; Andjelko V1.0" />
+    <MESSAGE value="Changes by milanceandrejic v1.0" />
+    <MESSAGE value="Changes by Andjelko V1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Andjelko V1.0" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

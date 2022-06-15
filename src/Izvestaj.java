@@ -194,10 +194,10 @@ public class Izvestaj
                     da.AzurirajDavaoca();
             }
 
-            if(d.getBrojDavanja() == 1)
+            if(d.getBrojDavanja() == 0)
                 brojPrvih++;
 
-            if(d.pol.toLowerCase() == "musko" || d.pol.toLowerCase() == "muski" || d.pol.toLowerCase() == "m")
+            if(d.pol.toLowerCase().equals("musko") || d.pol.toLowerCase().equals("muski") || d.pol.toLowerCase().equals("m"))
                 brojMuskaraca++;
             else
                 brojZena++;
@@ -214,18 +214,34 @@ public class Izvestaj
         Scanner scanner = new Scanner(System.in);
         ArrayList<Izvestaj> sviIzvestaji = Izvestaj.UcitajJSON("izvestaji.json");
         ArrayList<Akcija> sveAkcije = Akcija.UcitajJSON("akcije.json");
+        ArrayList<Akcija> zavrsene_akcije = new ArrayList<>();
+
         Akcija izabrana_akcija = null;
+        Izvestaj izabrani_izvestaj = null;
 
         int izbor = -1;
         System.out.println("Izaberite akciju ili unesite 0 da prekinete akciju");
+
+        for (Akcija a:sveAkcije)
+        {
+            for (Izvestaj i:sviIzvestaji)
+            {
+                if(a.id_akcije == i.id_akcije)
+                {
+                    zavrsene_akcije.add(a);
+                    break;
+                }
+            }
+        }
+
         do
         {
-            for (Akcija a: sveAkcije)
+            for (Akcija a: zavrsene_akcije)
             {
                 System.out.println(a.id_akcije + ". " + a.datumAkcije + " " + a.vremePocetka + "-" + a.vremeKraja + " - " + a.mestoOdrzavanja);
             }
             izbor = scanner.nextInt();
-            for (Akcija a: sveAkcije)
+            for (Akcija a: zavrsene_akcije)
             {
                 if(a.id_akcije == izbor)
                 {
@@ -233,9 +249,31 @@ public class Izvestaj
                     break;
                 }
             }
+            for (Izvestaj i: sviIzvestaji)
+            {
+                if(i.id_akcije == izbor)
+                {
+                    izabrani_izvestaj = i;
+                    break;
+                }
+            }
 
             if(izabrana_akcija == null)
                 System.err.println("Nema akcije za izabrani id");
+            else
+            {
+                System.out.println("Mesto odrzavanja: " + izabrana_akcija.mestoOdrzavanja);
+                System.out.println("Datum i vreme: " + izabrana_akcija.datumAkcije + " " +
+                                    izabrana_akcija.vremePocetka + "-" + izabrana_akcija.vremeKraja);
+                System.out.println("Rukovodeci doktor: " + izabrana_akcija.doktor);
+                System.out.println("Tehnicari: " + izabrana_akcija.tehnicari);
+                System.out.println("Broj davalaca: " + izabrani_izvestaj.brojDavalaca);
+                System.out.println("Broj muskaraca: " + izabrani_izvestaj.brojMuskaraca);
+                System.out.println("Broj zena: " + izabrani_izvestaj.brojZena);
+                System.out.println("Broj prvih davanja: " + izabrani_izvestaj.brojPrvihDavanja);
+                System.out.println("Broj odbijenih: " + izabrani_izvestaj.brojOdbijenih);
+
+            }
         }
         while (izbor!=0 || izabrana_akcija==null);
     }

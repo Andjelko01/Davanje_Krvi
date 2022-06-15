@@ -73,7 +73,7 @@ public abstract class Osoba
         String ime,prezime,jmbg,adresa,telefon,imeRoditelja,pol;
         do
         {
-            System.out.println("Unesite ime");
+            System.out.print("Unesite ime: ");
             podaci[0]=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(podaci[0])){
@@ -83,7 +83,7 @@ public abstract class Osoba
 
         do
         {
-            System.out.println("Unesite prezime");
+            System.out.print("Unesite prezime: ");
             podaci[1]=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(podaci[1])){
@@ -93,7 +93,7 @@ public abstract class Osoba
 
         do
         {
-            System.out.println("Unesite jmbg");
+            System.out.print("Unesite jmbg: ");
             podaci[2]=ProveraJMBG(scanner.nextLine());
             scanner.reset();
             if (PrekidUnosa(podaci[2])){
@@ -103,7 +103,7 @@ public abstract class Osoba
 
         do
         {
-            System.out.println("Unesite adresu");
+            System.out.print("Unesite adresu: ");
             podaci[3]=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(podaci[3])){
@@ -113,7 +113,7 @@ public abstract class Osoba
 
         do
         {
-            System.out.println("Unesite telefon");
+            System.out.print("Unesite telefon: ");
             podaci[4]=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(podaci[4])){
@@ -123,7 +123,7 @@ public abstract class Osoba
 
         do
         {
-            System.out.println("Unesite ime roditelja");
+            System.out.print("Unesite ime roditelja: ");
             podaci[5]=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(podaci[5])){
@@ -133,7 +133,7 @@ public abstract class Osoba
 
         do
         {
-            System.out.println("Unesite pol (Musko/Zensko)");
+            System.out.print("Unesite pol (Musko/Zensko): ");
             podaci[6]=scanner.nextLine();
             scanner.reset();
             if (PrekidUnosa(podaci[6])){
