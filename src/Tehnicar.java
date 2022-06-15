@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Tehnicar extends Osoba implements Informacije{
+public class Tehnicar extends Osoba implements Informacije, Uredjivanje{
     private int id_tehnicar;
     private String strucnaSprema;
 
@@ -154,7 +154,7 @@ public class Tehnicar extends Osoba implements Informacije{
                     {
                         if (t.id_tehnicar==rb)
                         {
-                            t.IzmeniTehnicara();
+                            t.Izmeni();
                         }
                     }
                     UpisiUJSON(tehnicari,"tehnicari.json");
@@ -166,9 +166,6 @@ public class Tehnicar extends Osoba implements Informacije{
         }
         while (input != 0);
     }
-
-
-
 
     public static void DodajTehnicara()
     {
@@ -210,7 +207,8 @@ public class Tehnicar extends Osoba implements Informacije{
         Tehnicar.UpisiUJSON(ucitan,"tehnicari.json");
     }
 
-    public void IzmeniTehnicara(){
+    @Override
+    public void Izmeni(){
         System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
         System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol 8.strucnaSprema");
         Scanner scanner= new Scanner(System.in);

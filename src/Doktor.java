@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Doktor extends Osoba implements Informacije{
+public class Doktor extends Osoba implements Informacije, Uredjivanje{
     private int id_doktora;
 
     public Doktor(String ime, String prezime, String jmbg, String adresa, String telefon, String imeRoditelja, String pol, int id_doktora) {
@@ -141,7 +141,7 @@ public class Doktor extends Osoba implements Informacije{
                     {
                         if (d.id_doktora==unos)
                         {
-                            d.IzmeniDoktora();
+                            d.Izmeni();
                         }
                     }
                     UpisiUJSON(doktori,"doktori.json");
@@ -179,7 +179,8 @@ public class Doktor extends Osoba implements Informacije{
         }while(postojiDoktor);
         Doktor t=new Doktor(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId());
     }
-    public void IzmeniDoktora()
+    @Override
+    public void Izmeni()
     {
         System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
         System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol");
