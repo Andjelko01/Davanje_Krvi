@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Tehnicar extends Osoba{
+public class Tehnicar extends Osoba implements Informacije{
     private int id_tehnicar;
     private String strucnaSprema;
 
@@ -250,6 +250,11 @@ public class Tehnicar extends Osoba{
             }
         }
         return tehnicari;
+    }
+
+    @Override
+    public void Pauza(Akcija a) {
+        System.out.println("Tehnicar je na pauzi od "+(a.vremePocetka+2)+":00 do"+(a.vremePocetka+2)+":15");
     }
 
 }

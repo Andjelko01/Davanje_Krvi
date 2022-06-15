@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Doktor extends Osoba{
+public class Doktor extends Osoba implements Informacije{
     private int id_doktora;
 
     public Doktor(String ime, String prezime, String jmbg, String adresa, String telefon, String imeRoditelja, String pol, int id_doktora) {
@@ -214,4 +214,8 @@ public class Doktor extends Osoba{
         return doktori;
     }
 
+    @Override
+    public void Pauza(Akcija a) {
+        System.out.println("Doktor je na pauzi od "+(a.vremePocetka+2)+":00 do"+(a.vremePocetka+2)+":15");
+    }
 }
