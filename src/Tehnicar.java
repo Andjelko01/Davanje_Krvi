@@ -225,7 +225,7 @@ public class Tehnicar extends Osoba implements Informacije, Uredjivanje{
     @Override
     public String toString()
     {
-        return id_tehnicar+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
+        return id_tehnicar+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg)+"\n";
     }
     public static ArrayList<Tehnicar> DostupniTehnicari(LocalDate datum)
     {
