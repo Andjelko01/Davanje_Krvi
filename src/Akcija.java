@@ -403,12 +403,14 @@ public class Akcija
                     scanner.nextLine();
                 String jmbg_unos = scanner.nextLine();
                 for (Davalac d : sviDavaoci) {
-                    if (jmbg_unos.equals(d.jmbg)) {
+                    if (jmbg_unos.equals(d.jmbg) && !postojiDavalacUAkciji(jmbg_unos,davaoci_za_akciju))
+                    {
                         davaoci_za_akciju.add(d);
                         postojiDavalac = true;
                         break;
                     }
                 }
+                Davalac d = null;
                 if (!postojiDavalac) {
                     System.out.println("Ne postoji davalac sa unetim JMBG, dodajete novog korisnika: ");
                     Davalac d = Davalac.DodajDavaoca();

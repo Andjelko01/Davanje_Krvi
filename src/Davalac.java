@@ -217,7 +217,9 @@ public class Davalac extends Osoba{
     public static Davalac DodajDavaoca()
     {
 
-        String krvnaGrupa,brojDavanja,datumDavanja;
+        String krvnaGrupa,
+                brojDavanja,
+                datumDavanja;
         LocalDate poslednjeDavanje;
         boolean aktivan;
         boolean postojiDavalac;
