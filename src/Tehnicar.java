@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Tehnicar extends Osoba{
+public class Tehnicar extends Osoba implements Informacije, Uredjivanje{
     private int id_tehnicar;
     private String strucnaSprema;
 
@@ -154,7 +154,7 @@ public class Tehnicar extends Osoba{
                     {
                         if (t.id_tehnicar==rb)
                         {
-                            t.IzmeniTehnicara();
+                            t.Izmeni();
                         }
                     }
                     UpisiUJSON(tehnicari,"tehnicari.json");
@@ -166,9 +166,6 @@ public class Tehnicar extends Osoba{
         }
         while (input != 0);
     }
-
-
-
 
     public static void DodajTehnicara()
     {
@@ -207,10 +204,12 @@ public class Tehnicar extends Osoba{
         Tehnicar t=new Tehnicar(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),strucnaSprema);
 
         ucitan.add(t);
+        System.out.println("Uspesno ste uneli tehnicara");
         Tehnicar.UpisiUJSON(ucitan,"tehnicari.json");
     }
 
-    public void IzmeniTehnicara(){
+    @Override
+    public void Izmeni(){
         System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
         System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol 8.strucnaSprema");
         Scanner scanner= new Scanner(System.in);
@@ -227,7 +226,7 @@ public class Tehnicar extends Osoba{
     @Override
     public String toString()
     {
-        return id_tehnicar+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg);
+        return id_tehnicar+". "+ ime+" (" + imeRoditelja+") "  +prezime+" " +jmbg+" "+ adresa+" "+ telefon+" "+  this.getDatumRodjenja(this.jmbg)+"\n";
     }
     public static ArrayList<Tehnicar> DostupniTehnicari(LocalDate datum)
     {
@@ -250,6 +249,11 @@ public class Tehnicar extends Osoba{
             }
         }
         return tehnicari;
+    }
+
+    @Override
+    public void Pauza(Akcija a) {
+        System.out.println("Tehnicar je na pauzi od "+(a.vremePocetka+2)+":00 do"+(a.vremePocetka+2)+":15");
     }
 
 }

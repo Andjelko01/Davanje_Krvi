@@ -192,6 +192,8 @@ public class Akcija
             {
                 System.out.print("Unesite mesto odrzavanja akcije: ");
                 scanner.reset();
+                if(scanner.hasNext())
+                    scanner.next();
                 mesto = scanner.nextLine();
                 if (mesto.isEmpty())
                 {
@@ -298,6 +300,7 @@ public class Akcija
         Akcija a = new Akcija(Akcija.getNextId(),date,pocetak,kraj,mesto,doca,izabraniTehnicari);
         ArrayList<Akcija> sveAkcije = Akcija.UcitajJSON("akcije.json");
         sveAkcije.add(a);
+        System.out.println("Uspesno ste uneli akciju");
         Akcija.UpisiUJSON(sveAkcije,"akcije.json");
 
     }
@@ -403,16 +406,20 @@ public class Akcija
                     scanner.nextLine();
                 String jmbg_unos = scanner.nextLine();
                 for (Davalac d : sviDavaoci) {
-                    if (jmbg_unos.equals(d.jmbg)) {
+                    if (jmbg_unos.equals(d.jmbg) && !postojiDavalacUAkciji(jmbg_unos,davaoci_za_akciju))
+                    {
                         davaoci_za_akciju.add(d);
                         postojiDavalac = true;
                         break;
                     }
                 }
+                Davalac d = null;
                 if (!postojiDavalac) {
                     System.out.println("Ne postoji davalac sa unetim JMBG, dodajete novog korisnika: ");
-                    Davalac d = Davalac.DodajDavaoca();
-                    if (d != null)
+
+                    d = Davalac.DodajDavaoca();
+
+                    if (d != null && !postojiDavalacUAkciji(d.jmbg,davaoci_za_akciju))
                         davaoci_za_akciju.add(d);
                     else
                         System.err.println("Neuspesno dodavanje davaoca, pokusajte ponovo");
@@ -427,6 +434,19 @@ public class Akcija
 
         System.out.println("Stampanje izvestaja...");
         Izvestaj.StampajIzvestaj(izabrana_akcija, davaoci_za_akciju, odb);
+    }
+
+    public static boolean postojiDavalacUAkciji(String JMBG,ArrayList<Davalac> davaoci)
+    {
+        for (Davalac d:davaoci)
+        {
+             if (JMBG.equals(d.jmbg))
+             {
+                 System.err.println("Davalac se već nalazi u akciji");
+                 return true;
+             }
+        }
+        return false;
     }
 
 }

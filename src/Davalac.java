@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Davalac extends Osoba{
+public class Davalac extends Osoba implements Uredjivanje{
     private int id_davaoca;
     private String krvnaGrupa;
     private int brojDavanja;
@@ -198,7 +198,7 @@ public class Davalac extends Osoba{
                     {
                         if (d.id_davaoca==rb)
                         {
-                            d.IzmeniDavaoca();
+                            d.Izmeni();
                         }
                     }
                     UpisiUJSON(davaoci,"davaoci.json");
@@ -217,7 +217,9 @@ public class Davalac extends Osoba{
     public static Davalac DodajDavaoca()
     {
 
-        String krvnaGrupa,brojDavanja,datumDavanja;
+        String krvnaGrupa,
+                brojDavanja,
+                datumDavanja;
         LocalDate poslednjeDavanje;
         boolean aktivan;
         boolean postojiDavalac;
@@ -270,7 +272,8 @@ public class Davalac extends Osoba{
         return davaoc;
     }
 
-    public void IzmeniDavaoca()
+    @Override
+    public void Izmeni()
     {
         System.out.println("Unesite vrednost koju zelite da izmenite bas kako je ispisano u meni-ju");
         System.out.println("1.ime 2.prezime 3.jmbg 4.adresa 5. telefon 6.imeRoditelja 7.pol 8.krvnaGrupa 9.brojDavanja");
@@ -279,7 +282,7 @@ public class Davalac extends Osoba{
         switch(promena.toLowerCase())
         {
             case "krvnagrupa":
-                System.out.println("Unesite novu krvu grupu");
+                System.out.println("Unesite novu krvnu grupu");
                 setKrvnaGrupa(scanner.nextLine());
                 break;
             case "brojdavanja":
@@ -292,11 +295,13 @@ public class Davalac extends Osoba{
         }
 
     }
+
     public void AzurirajDavaoca()
     {
         this.poslednjeDavanje=LocalDate.now();
         this.brojDavanja++;
     }
+
     @Override
     public String toString()
     {
