@@ -282,7 +282,7 @@ public class Davalac extends Osoba implements Uredjivanje{
         switch(promena.toLowerCase())
         {
             case "krvnagrupa":
-                System.out.println("Unesite novu krvu grupu");
+                System.out.println("Unesite novu krvnu grupu");
                 setKrvnaGrupa(scanner.nextLine());
                 break;
             case "brojdavanja":

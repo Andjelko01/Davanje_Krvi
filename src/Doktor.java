@@ -178,6 +178,7 @@ public class Doktor extends Osoba implements Informacije, Uredjivanje{
             }
         }while(postojiDoktor);
         Doktor t=new Doktor(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId());
+        System.out.println("Uspesno ste dodali doktora");
     }
     @Override
     public void Izmeni()

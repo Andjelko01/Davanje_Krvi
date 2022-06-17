@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6c77f9be-7a25-4bf1-a493-d2604ecb8ea5" name="Changes" comment="Changes by Andjelko V1.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/akcije.json" beforeDir="false" afterPath="$PROJECT_DIR$/akcije.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doktori.json" beforeDir="false" afterPath="$PROJECT_DIR$/doktori.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/izvestaji.json" beforeDir="false" afterPath="$PROJECT_DIR$/izvestaji.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tehnicar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehnicar.java" afterDir="false" />
-    </list>
-    <list id="b69f0641-cf1d-4e3b-90ce-a520008f47fb" name="Changes by milanceandrejic" comment="Changes by milanceandrejic">
       <change beforePath="$PROJECT_DIR$/src/Akcija.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akcija.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Davalac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Davalac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Doktor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doktor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tehnicar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tehnicar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,9 @@
       <workItem from="1655106623277" duration="10504000" />
       <workItem from="1655129856506" duration="948000" />
       <workItem from="1655130845208" duration="12548000" />
-      <workItem from="1655285312405" duration="11713000" />
+      <workItem from="1655285312405" duration="13353000" />
+      <workItem from="1655323068926" duration="58000" />
+      <workItem from="1655457635287" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="V0.1">
       <created>1654893899010</created>
@@ -207,7 +206,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655303059359</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Changes by Andjelko V1.2">
+      <created>1655304161483</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655304161483</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Changes by milanceandrejic">
+      <created>1655304177983</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1655304177983</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,9 +251,9 @@
     <MESSAGE value="Changes by milanceandrejic v1.1" />
     <MESSAGE value="Changes by milanceandrejic v1.2" />
     <MESSAGE value="Changes by Andjelko V1.1" />
-    <MESSAGE value="Changes by milanceandrejic" />
     <MESSAGE value="Changes by Andjelko V1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Andjelko V1.2" />
+    <MESSAGE value="Changes by milanceandrejic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by milanceandrejic" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

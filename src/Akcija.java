@@ -300,6 +300,7 @@ public class Akcija
         Akcija a = new Akcija(Akcija.getNextId(),date,pocetak,kraj,mesto,doca,izabraniTehnicari);
         ArrayList<Akcija> sveAkcije = Akcija.UcitajJSON("akcije.json");
         sveAkcije.add(a);
+        System.out.println("Uspesno ste uneli akciju");
         Akcija.UpisiUJSON(sveAkcije,"akcije.json");
 
     }

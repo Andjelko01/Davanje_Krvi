@@ -204,6 +204,7 @@ public class Tehnicar extends Osoba implements Informacije, Uredjivanje{
         Tehnicar t=new Tehnicar(podaci[0],podaci[1],podaci[2],podaci[3],podaci[4],podaci[5],podaci[6],getNextId(),strucnaSprema);
 
         ucitan.add(t);
+        System.out.println("Uspesno ste uneli tehnicara");
         Tehnicar.UpisiUJSON(ucitan,"tehnicari.json");
     }
 
